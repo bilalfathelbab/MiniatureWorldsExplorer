@@ -1,49 +1,55 @@
 // ============================================================
 // CARDS
-// Builds HTML for the home grid species cards
-// Depends on: data.js (algaeSpecies, gradients, borderColors, getSpeciesImage)
+// Clones the #card-template for each species and fills in data.
+// All HTML structure lives in index.html — this file only
+// touches values (src, textContent, classList).
+// Depends on: data.js
 // ============================================================
 
 /**
- * Creates the HTML string for a single species card
- * @param {Object} species - A species object from algaeSpecies
- * @returns {string} HTML string
+ * Builds one card by cloning the template and filling in species data.
+ * @param {Object} species
+ * @returns {DocumentFragment}
  */
 function createAlgaeCard(species) {
+  const template = document.getElementById('card-template');
+  const clone    = template.content.cloneNode(true);
+
   const imageUrl = getSpeciesImage(species.id);
   const gradient = gradients[species.color];
-  const border = borderColors[species.id];
+  const border   = borderColors[species.id];
 
-  // Format name so the scientific name in brackets is italicised
-  const formattedName = species.name.replace(/\(([^)]+)\)/, '<em>($1)</em>');
+  // Wire up the click to show the detail view
+  const card = clone.querySelector('.algae-card');
+  card.addEventListener('click', () => showDetail(species.id));
 
-  return `
-    <div class="algae-card rounded-xl shadow-lg p-3 md:p-5 cursor-pointer border-2 border-transparent hover:border-white/30"
-         onclick="showDetail(${species.id})">
-      <div class="text-center h-full flex flex-col items-center justify-center">
-        <div class="circle-icon bg-gradient-to-br ${gradient} rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center text-3xl md:text-6xl shadow-lg overflow-hidden border-4 ${border}">
-          <img
-            src="${imageUrl}"
-            alt="${species.name}"
-            class="w-full h-full object-cover rounded-full scale-125"
-            loading="lazy"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-          >
-          <span style="display:none;">${species.emoji}</span>
-        </div>
-        <h3 class="text-sm md:text-xl lg:text-2xl font-bold leading-tight line-clamp-2"
-            style="font-family: 'Arial Black', Arial, sans-serif; color: #d5e042;">
-          ${formattedName}
-        </h3>
-      </div>
-    </div>
-  `;
+  // Image circle — gradient background + border colour
+  const icon = clone.querySelector('.card-icon');
+  icon.classList.add('bg-gradient-to-br', ...gradient.split(' '), border);
+
+  // Species image with emoji fallback
+  const img   = clone.querySelector('.card-img');
+  const emoji = clone.querySelector('.card-emoji');
+  img.src     = imageUrl;
+  img.alt     = species.name;
+  img.addEventListener('error', () => {
+    img.style.display   = 'none';
+    emoji.style.display = 'block';
+  });
+  emoji.textContent = species.emoji;
+
+  // Name — italicise the scientific portion in brackets
+  const nameEl      = clone.querySelector('.card-name');
+  nameEl.innerHTML  = species.name.replace(/\(([^)]+)\)/, '<em>($1)</em>');
+
+  return clone;
 }
 
 /**
- * Renders all species cards into the #homeView grid
+ * Renders all species cards into the #homeView grid.
  */
 function renderCards() {
   const homeView = document.getElementById('homeView');
-  homeView.innerHTML = algaeSpecies.map(createAlgaeCard).join('');
+  homeView.innerHTML = '';
+  algaeSpecies.forEach(species => homeView.appendChild(createAlgaeCard(species)));
 }
