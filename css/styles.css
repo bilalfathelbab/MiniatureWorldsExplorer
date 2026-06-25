@@ -1,0 +1,245 @@
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+html {
+  touch-action: none;
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  touch-action: none;
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Allow touch interactions on interactive elements */
+button, .algae-card, [onclick] {
+  touch-action: auto;
+}
+
+/* ============================================================
+   ALGAE CARDS
+   ============================================================ */
+
+.algae-card {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  animation: gentleFloat 4s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.algae-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.algae-card:hover::before {
+  left: 100%;
+}
+
+/* Card color variants */
+.algae-card:nth-child(8n+1) {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.8) 0%, rgba(14, 116, 144, 0.9) 100%);
+  animation-delay: 0s;
+  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.3);
+}
+.algae-card:nth-child(8n+2) {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.8) 0%, rgba(5, 150, 105, 0.9) 100%);
+  animation-delay: -1s;
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.3);
+}
+.algae-card:nth-child(8n+3) {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.8) 0%, rgba(13, 148, 136, 0.9) 100%);
+  animation-delay: -2s;
+  box-shadow: 0 8px 32px rgba(20, 184, 166, 0.3);
+}
+.algae-card:nth-child(8n+4) {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8) 0%, rgba(29, 78, 216, 0.9) 100%);
+  animation-delay: -3s;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+}
+.algae-card:nth-child(8n+5) {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(67, 56, 202, 0.9) 100%);
+  animation-delay: -1.5s;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+}
+.algae-card:nth-child(8n+6) {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.8) 0%, rgba(2, 132, 199, 0.9) 100%);
+  animation-delay: -2.5s;
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
+}
+.algae-card:nth-child(8n+7) {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(4, 120, 87, 0.9) 100%);
+  animation-delay: -0.5s;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+}
+.algae-card:nth-child(8n+8) {
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.8) 0%, rgba(12, 74, 110, 0.9) 100%);
+  animation-delay: -3.5s;
+  box-shadow: 0 8px 32px rgba(8, 145, 178, 0.3);
+}
+
+.algae-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  animation-play-state: paused;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================================
+   CIRCLE ICON (image inside card)
+   ============================================================ */
+
+.circle-icon {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: gentleRotate 6s ease-in-out infinite;
+  width: clamp(80px, 50vw, 160px);
+  height: clamp(80px, 50vw, 160px);
+}
+
+.circle-icon:nth-child(odd) {
+  animation-delay: -1.5s;
+}
+
+.circle-icon::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.3), transparent, rgba(255,255,255,0.3));
+  transform: rotate(-45deg) translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.algae-card:hover .circle-icon::before {
+  transform: rotate(-45deg) translateX(100%);
+}
+
+.algae-card:hover .circle-icon {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   DETAIL VIEW ANIMATIONS
+   ============================================================ */
+
+.detail-view {
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.detail-view-closing {
+  animation: slideOut 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+}
+
+.overlay-fade-in {
+  animation: overlayFadeIn 0.5s ease-out;
+}
+
+.overlay-fade-out {
+  animation: overlayFadeOut 0.4s ease-in;
+}
+
+.fullscreen-fade-in {
+  animation: fullscreenFadeIn 0.3s ease-out;
+}
+
+.fullscreen-fade-out {
+  animation: fullscreenFadeOut 0.25s ease-in;
+}
+
+/* ============================================================
+   BUBBLE ANIMATION
+   ============================================================ */
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  animation: bubbleFloat 8s infinite ease-in-out;
+  pointer-events: none;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.bubble:nth-child(odd)  { animation-delay: -2s; }
+.bubble:nth-child(3n)   { animation-delay: -4s; }
+.bubble:nth-child(4n)   { animation-delay: -6s; }
+.bubble:nth-child(5n)   { animation-delay: -1s; }
+.bubble:nth-child(6n)   { animation-delay: -3s; }
+.bubble:nth-child(7n)   { animation-delay: -5s; }
+.bubble:nth-child(8n)   { animation-delay: -7s; }
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-3px); }
+}
+
+@keyframes gentleRotate {
+  0%, 100% { transform: rotate(0deg); }
+  25%       { transform: rotate(1deg); }
+  75%       { transform: rotate(-1deg); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(-30px) scale(0.95); }
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; backdrop-filter: blur(0px); }
+  to   { opacity: 1; backdrop-filter: blur(8px); }
+}
+
+@keyframes overlayFadeOut {
+  from { opacity: 1; backdrop-filter: blur(8px); }
+  to   { opacity: 0; backdrop-filter: blur(0px); }
+}
+
+@keyframes fullscreenFadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fullscreenFadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.8); }
+}
+
+@keyframes bubbleFloat {
+  0%   { transform: translateY(100vh) translateX(0px) scale(0); opacity: 0; }
+  10%  { opacity: 0.8; }
+  50%  { transform: translateY(50vh) translateX(15px) scale(0.7); }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-100px) translateX(-10px) scale(1); opacity: 0; }
+}
