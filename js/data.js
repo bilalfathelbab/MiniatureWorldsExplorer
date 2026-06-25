@@ -195,11 +195,11 @@ const speciesImages = {
   1: 'https://lh3.googleusercontent.com/d/1clcNj9uD25XlJ3LgoNmlFdldBCmMe84H',
   2: 'https://lh3.googleusercontent.com/d/19XgxOOMhvc0VY97vCyHbulkvz3PBy3xn',
   3: 'https://lh3.googleusercontent.com/d/1foOqwcVy6lojf-fPAjvIl33ez6qhaJao',
-  4: 'https://imgur.com/4tjiPPD.jpg',
+  4: 'https://lh3.googleusercontent.com/d/19AwgGqd43WWJ5RmGfmQHYwWRWllk010t',
   5: 'https://lh3.googleusercontent.com/d/193KNzFrz4T8t8ekDnZkZRdRVnyMiKlx-',
-  6: 'https://imgur.com/IQY5IIw.jpg',
+  6: 'https://lh3.googleusercontent.com/d/1417pUJst1lY4OHzy1J-i1BA7LWwzGWex',
   7: 'https://lh3.googleusercontent.com/d/1NY_fymvwD6nFk0bhbpNaxxe_00jESteh',
-  8: 'https://imgur.com/8bkx2m3.jpg'
+  8: 'https://lh3.googleusercontent.com/d/1cyHwCclAuEqGOGg9NHU2O_cVlsCDik1v'
 };
 
 // Maps species ID to border color class
