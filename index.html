@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miniature Worlds Explorer</title>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <!-- Project styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="h-full overflow-hidden" style="background-color: #00577c;">
+
+  <!-- =====================================================
+       FLOATING BUBBLES — home screen background
+       ===================================================== -->
+  <div id="bubbleContainer" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
+
+  <!-- =====================================================
+       HOME VIEW
+       ===================================================== -->
+  <div class="h-full flex flex-col relative z-10">
+
+    <header class="flex-shrink-0 text-center py-3 md:py-4 px-2 md:px-4">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 md:mb-2"
+          style="font-family: 'Arial Black', Arial, sans-serif; color: #d5e042; text-transform: uppercase;">
+        MINIATURE WORLDS EXPLORER
+      </h1>
+      <p class="text-base sm:text-lg md:text-xl font-semibold text-teal-300 drop-shadow-lg">
+        Discover the fascinating world of freshwater ecosystems!
+      </p>
+      <p class="text-sm sm:text-base md:text-lg text-teal-200 italic drop-shadow-md">
+        Tap to learn more about each organism
+      </p>
+    </header>
+
+    <!-- Species card grid — populated by cards.js -->
+    <main id="homeView"
+          class="flex-1 overflow-hidden grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6 p-2 md:p-4 auto-rows-fr">
+    </main>
+
+  </div>
+
+  <!-- =====================================================
+       DETAIL VIEW (hidden until a card is clicked)
+       ===================================================== -->
+  <div id="detailView" class="hidden fixed inset-0 z-50 bg-cover bg-center" style="background-color: #00577c;">
+
+    <!-- Bubbles for the detail view -->
+    <div id="detailBubbleContainer" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
+
+    <!-- Fullscreen image modal -->
+    <div id="fullscreenModal"
+         class="hidden fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center backdrop-blur-sm">
+      <div class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
+        <img id="fullscreenImage" src="" alt=""
+             class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+        <button id="closeFullscreen"
+                class="absolute top-4 right-4 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-2xl font-bold transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white border-opacity-30">
+          ×
+        </button>
+        <div id="fullscreenCaption"
+             class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-full backdrop-blur-sm border border-white border-opacity-20 text-center max-w-md">
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail view layout -->
+    <div class="h-full flex flex-col relative z-10">
+
+      <!-- Back button -->
+      <div class="flex-shrink-0 p-3 sm:p-4 md:p-6">
+        <button id="backButton"
+                class="flex items-center px-5 md:px-6 lg:px-8 py-3 md:py-4 rounded-lg shadow-lg cursor-pointer border border-white/20 backdrop-filter backdrop-blur-10 transition-all duration-300 hover:scale-105 hover:shadow-xl text-white font-medium text-base md:text-lg lg:text-xl relative overflow-hidden"
+                style="background: linear-gradient(135deg, rgba(20,184,166,0.2) 0%, rgba(13,148,136,0.3) 100%);">
+          <svg class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 mr-2 md:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span>Back to Species Grid</span>
+        </button>
+      </div>
+
+      <!-- Detail content panel -->
+      <div class="flex-1 px-4 pb-4 overflow-hidden">
+        <div class="bg-white rounded-2xl shadow-xl h-full overflow-hidden detail-view">
+          <div id="detailContent">
+            <!-- Populated dynamically by detail.js -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================================================
+       JAVASCRIPT — order matters!
+       data.js must come first (everything else reads from it)
+       main.js must come last (calls functions from all others)
+       ===================================================== -->
+  <script src="js/data.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/bubbles.js"></script>
+  <script src="js/detail.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
