@@ -142,6 +142,25 @@ button, .algae-card, [onclick] {
 }
 
 /* ============================================================
+   DETAIL CARD TEXT SCALING
+   ============================================================ */
+
+.detail-about-card p,
+.detail-characteristics li span.item-text,
+.detail-uses li span.item-text {
+  font-size: clamp(1rem, 2.5vh, 2rem);
+  line-height: 1.6;
+}
+
+.detail-characteristics li .item-number,
+.detail-uses li .item-number {
+  font-size: clamp(0.9rem, 2vh, 1.5rem);
+  width: clamp(1.5rem, 3vh, 2.5rem);
+  height: clamp(1.5rem, 3vh, 2.5rem);
+  flex-shrink: 0;
+}
+
+/* ============================================================
    DETAIL VIEW ANIMATIONS
    ============================================================ */
 
