@@ -34,6 +34,7 @@ button, .algae-card, [onclick] {
   animation: gentleFloat 4s ease-in-out infinite;
   position: relative;
   overflow: hidden;
+  height: clamp(150px, 30vw, 300px);
   aspect-ratio: 1 / 1;
 }
 
