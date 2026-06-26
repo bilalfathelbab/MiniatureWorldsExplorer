@@ -1,8 +1,8 @@
 // ============================================================
 // MAIN
-// Entry point — initialises the app once the DOM is ready.
+// Entry point: initializes the app once the DOM is ready.
 // Load order in index.html must be:
-//   data.js → cards.js → bubbles.js → detail.js → main.js
+//   data.js -> cards.js -> bubbles.js -> detail.js -> main.js
 // ============================================================
 
 /**
@@ -19,7 +19,7 @@ function initialize() {
   initFullscreen();
 }
 
-// Wait for the DOM if needed, otherwise run immediately
+// Wait for the DOM if needed, otherwise run immediately.
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initialize);
 } else {

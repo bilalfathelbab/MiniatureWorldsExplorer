@@ -15,7 +15,7 @@
 <body class="h-full overflow-hidden" style="background-color: #00577c;">
 
   <!-- =====================================================
-       FLOATING BUBBLES — home screen background
+       Floating bubbles: home screen background
        ===================================================== -->
   <div id="bubbleContainer" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
 
@@ -37,7 +37,7 @@
       </p>
     </header>
 
-    <!-- Species card grid — populated by cards.js -->
+    <!-- Species card grid: populated by cards.js -->
     <main id="homeView"
           class="flex-1 overflow-hidden grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6 p-2 md:p-4 auto-rows-fr">
     </main>
@@ -46,7 +46,7 @@
 
   <!-- =====================================================
        CARD TEMPLATE
-       Cloned once per species by cards.js — never visible directly
+       Cloned once per species by cards.js; never visible directly
        ===================================================== -->
   <template id="card-template">
     <div class="algae-card rounded-xl shadow-lg p-3 md:p-5 cursor-pointer border-2 border-transparent hover:border-white/30">
@@ -82,7 +82,7 @@
              class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
         <button id="closeFullscreen"
                 class="absolute top-4 right-4 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-2xl font-bold transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white border-opacity-30">
-          ×
+          &times;
         </button>
         <div id="fullscreenCaption"
              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-full backdrop-blur-sm border border-white border-opacity-20 text-center max-w-md">
@@ -105,10 +105,11 @@
         </button>
       </div>
 
-      <!-- Detail content panel — filled by detail.js using the template below -->
+      <!-- Detail content panel: filled by detail.js using the template below -->
       <div class="flex-1 px-4 pb-4 overflow-hidden">
         <div class="bg-white rounded-2xl shadow-xl h-full overflow-hidden detail-view">
-          <div id="detailContent" class="h-full"></div>        </div>
+          <div id="detailContent" class="h-full"></div>
+        </div>
       </div>
 
     </div>
@@ -116,12 +117,12 @@
 
   <!-- =====================================================
        DETAIL TEMPLATE
-       Cloned and filled by detail.js — never visible directly
+       Cloned and filled by detail.js; never visible directly
        ===================================================== -->
   <template id="detail-template">
     <div class="h-full flex flex-col">
 
-      <!-- Coloured header banner -->
+      <!-- Colored header banner -->
       <div class="detail-header flex-shrink-0 relative h-24 sm:h-32 md:h-40 lg:h-48 flex items-center overflow-hidden">
         <div class="absolute inset-0 bg-black bg-opacity-10"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
@@ -174,7 +175,7 @@
           <!-- About This Species -->
           <div class="detail-about-card bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col"
                style="box-shadow:0 10px 25px rgba(0,0,0,0.1),0 4px 10px rgba(0,0,0,0.04);">
-            <!-- Coloured top bar — colour set by detail.js -->
+            <!-- Colored top bar: color set by detail.js -->
             <div class="detail-about-bar absolute top-0 left-0 w-full h-2"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-50"></div>
             <div class="relative z-10 flex flex-col h-full">
@@ -235,7 +236,7 @@
   </template>
 
   <!-- =====================================================
-       JAVASCRIPT — order matters!
+       JavaScript: order matters
        data.js must come first (everything else reads from it)
        main.js must come last (calls functions from all others)
        ===================================================== -->

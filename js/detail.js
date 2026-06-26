@@ -1,7 +1,7 @@
 // ============================================================
 // DETAIL VIEW
 // Clones #detail-template and fills it with species data.
-// All HTML structure lives in index.html — this file only
+// All HTML structure lives in index.html; this file only
 // touches values and classes.
 // Depends on: data.js, bubbles.js
 // ============================================================
@@ -24,7 +24,7 @@ function showDetail(speciesId) {
   detailContent.appendChild(clone);
 
   const detailView = document.getElementById('detailView');
-  const homeView   = document.getElementById('homeView');
+  const homeView = document.getElementById('homeView');
 
   detailView.classList.remove('hidden');
   detailView.classList.add('overlay-fade-in');
@@ -37,8 +37,8 @@ function showDetail(speciesId) {
  * Returns to the home grid from the detail view with closing animation.
  */
 function showHome() {
-  const detailView    = document.getElementById('detailView');
-  const homeView      = document.getElementById('homeView');
+  const detailView = document.getElementById('detailView');
+  const homeView = document.getElementById('homeView');
   const detailContent = document.querySelector('.detail-view');
 
   detailView.classList.remove('overlay-fade-in');
@@ -74,42 +74,42 @@ function showHome() {
  */
 function buildDetailFragment(species, imageUrl, gradient) {
   const template = document.getElementById('detail-template');
-  const clone    = template.content.cloneNode(true);
+  const clone = template.content.cloneNode(true);
 
-  // -- Header background gradient --
+  // Header background gradient.
   const header = clone.querySelector('.detail-header');
   header.classList.add('bg-gradient-to-br', ...gradient.split(' '));
 
-  // -- Species image --
-  const img   = clone.querySelector('.detail-img');
-  img.src     = imageUrl;
-  img.alt     = species.name;
+  // Species image.
+  const img = clone.querySelector('.detail-img');
+  img.src = imageUrl;
+  img.alt = species.name;
 
-  // -- Fullscreen click on image wrapper --
+  // Fullscreen click on image wrapper.
   const imgWrapper = clone.querySelector('.detail-img-wrapper');
   imgWrapper.addEventListener('click', () => openFullscreen(imageUrl, species.name));
 
-  // -- Name / habitat / size --
-  clone.querySelector('.detail-name').textContent    = species.name;
+  // Name, habitat, and size.
+  clone.querySelector('.detail-name').textContent = species.name;
   clone.querySelector('.detail-habitat').textContent = '📍 ' + species.habitat;
-  clone.querySelector('.detail-size').textContent    = '📏 ' + species.size;
+  clone.querySelector('.detail-size').textContent = '📏 ' + species.size;
 
-  // -- About card: colour bar + icon background match the species gradient --
-  const aboutBar  = clone.querySelector('.detail-about-bar');
+  // About card colors match the species gradient.
+  const aboutBar = clone.querySelector('.detail-about-bar');
   const aboutIcon = clone.querySelector('.detail-about-icon');
   aboutBar.classList.add('bg-gradient-to-r', ...gradient.split(' '));
   aboutIcon.classList.add('bg-gradient-to-r', ...gradient.split(' '));
 
-  // -- Description text --
+  // Description text.
   clone.querySelector('.detail-description').textContent = species.description;
 
-  // -- Characteristics list --
+  // Characteristics list.
   const charList = clone.querySelector('.detail-characteristics');
   species.characteristics.forEach((text, i) => {
     charList.appendChild(buildListItem(text, i + 1, 'from-emerald-400 to-teal-500'));
   });
 
-  // -- Uses list --
+  // Uses list.
   const usesList = clone.querySelector('.detail-uses');
   species.uses.forEach((text, i) => {
     usesList.appendChild(buildListItem(text, i + 1, 'from-blue-400 to-indigo-500'));
@@ -122,12 +122,12 @@ function buildDetailFragment(species, imageUrl, gradient) {
  * Clones #list-item-template and fills it with a number and text.
  * @param {string} text    - The list item label
  * @param {number} number  - The badge number
- * @param {string} colors  - Tailwind gradient colour classes for the badge
+ * @param {string} colors  - Tailwind gradient color classes for the badge
  * @returns {DocumentFragment}
  */
 function buildListItem(text, number, colors) {
   const template = document.getElementById('list-item-template');
-  const clone    = template.content.cloneNode(true);
+  const clone = template.content.cloneNode(true);
 
   const badge = clone.querySelector('.item-number');
   badge.textContent = number;
@@ -152,9 +152,9 @@ function openFullscreen(imageSrc, caption) {
   const image = document.getElementById('fullscreenImage');
   const capEl = document.getElementById('fullscreenCaption');
 
-  image.src             = imageSrc;
-  image.alt             = caption;
-  capEl.textContent     = caption;
+  image.src = imageSrc;
+  image.alt = caption;
+  capEl.textContent = caption;
 
   modal.classList.remove('hidden');
   modal.classList.add('fullscreen-fade-in');

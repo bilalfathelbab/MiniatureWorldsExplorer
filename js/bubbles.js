@@ -21,7 +21,7 @@ function createBubble(containerId = 'bubbleContainer') {
 
   // Random size between 10px and 50px
   const size = Math.random() * 40 + 10;
-  bubble.style.width  = size + 'px';
+  bubble.style.width = size + 'px';
   bubble.style.height = size + 'px';
 
   // Random horizontal start position

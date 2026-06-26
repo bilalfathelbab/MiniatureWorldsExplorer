@@ -1,7 +1,7 @@
 // ============================================================
 // CARDS
 // Clones the #card-template for each species and fills in data.
-// All HTML structure lives in index.html — this file only
+// All HTML structure lives in index.html; this file only
 // touches values (src, textContent, classList).
 // Depends on: data.js
 // ============================================================
@@ -13,34 +13,34 @@
  */
 function createAlgaeCard(species) {
   const template = document.getElementById('card-template');
-  const clone    = template.content.cloneNode(true);
+  const clone = template.content.cloneNode(true);
 
   const imageUrl = getSpeciesImage(species.id);
   const gradient = gradients[species.color];
-  const border   = borderColors[species.id];
+  const border = borderColors[species.id];
 
-  // Wire up the click to show the detail view
+  // Connect each card to its detail view.
   const card = clone.querySelector('.algae-card');
   card.addEventListener('click', () => showDetail(species.id));
 
-  // Image circle — gradient background + border colour
+  // Apply the image circle gradient and border color.
   const icon = clone.querySelector('.card-icon');
   icon.classList.add('bg-gradient-to-br', ...gradient.split(' '), border);
 
   // Species image with emoji fallback
-  const img   = clone.querySelector('.card-img');
+  const img = clone.querySelector('.card-img');
   const emoji = clone.querySelector('.card-emoji');
-  img.src     = imageUrl;
-  img.alt     = species.name;
+  img.src = imageUrl;
+  img.alt = species.name;
   img.addEventListener('error', () => {
-    img.style.display   = 'none';
+    img.style.display = 'none';
     emoji.style.display = 'block';
   });
   emoji.textContent = species.emoji;
 
-  // Name — italicise the scientific portion in brackets
-  const nameEl      = clone.querySelector('.card-name');
-  nameEl.innerHTML  = species.name.replace(/\(([^)]+)\)/, '<em>($1)</em>');
+  // Italicize the scientific portion in brackets.
+  const nameEl = clone.querySelector('.card-name');
+  nameEl.innerHTML = species.name.replace(/\(([^)]+)\)/, '<em>($1)</em>');
 
   return clone;
 }
