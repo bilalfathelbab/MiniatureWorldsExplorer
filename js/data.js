@@ -192,14 +192,14 @@ const gradients = {
 
 // Maps species ID to image URL
 const speciesImages = {
-  1: 'https://lh3.googleusercontent.com/d/1clcNj9uD25XlJ3LgoNmlFdldBCmMe84H',
-  2: 'https://lh3.googleusercontent.com/d/19XgxOOMhvc0VY97vCyHbulkvz3PBy3xn',
-  3: 'https://lh3.googleusercontent.com/d/1foOqwcVy6lojf-fPAjvIl33ez6qhaJao',
-  4: 'https://lh3.googleusercontent.com/d/19AwgGqd43WWJ5RmGfmQHYwWRWllk010t',
-  5: 'https://lh3.googleusercontent.com/d/193KNzFrz4T8t8ekDnZkZRdRVnyMiKlx-',
-  6: 'https://lh3.googleusercontent.com/d/1417pUJst1lY4OHzy1J-i1BA7LWwzGWex',
-  7: 'https://lh3.googleusercontent.com/d/1NY_fymvwD6nFk0bhbpNaxxe_00jESteh',
-  8: 'https://lh3.googleusercontent.com/d/1cyHwCclAuEqGOGg9NHU2O_cVlsCDik1v'
+  1: "images/Diatom.png",
+  2: "images/Green algae.png",
+  3: "images/Flat Worm.png",
+  4: "images/Ostracod.png",
+  5: "images/Ciliate.png",
+  6: "images/Java Moss.png",
+  7: "images/Rotifer.png",
+  8: "images/Nematode.png"
 };
 
 // Maps species ID to border color class

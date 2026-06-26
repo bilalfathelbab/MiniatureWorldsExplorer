@@ -4,8 +4,7 @@
 // the home view and the detail view.
 // ============================================================
 
-// Interval references so they can be stopped independently
-let homeBubbleInterval   = null;
+// Interval reference so detail bubbles can be stopped when leaving the view
 let detailBubbleInterval = null;
 
 /**
@@ -22,7 +21,7 @@ function createBubble(containerId = 'bubbleContainer') {
 
   // Random size between 10px and 50px
   const size = Math.random() * 40 + 10;
-  bubble.style.width  = size + 'px';
+  bubble.style.width = size + 'px';
   bubble.style.height = size + 'px';
 
   // Random horizontal start position
@@ -50,7 +49,7 @@ function startBubbles() {
   }
 
   // Steady trickle
-  homeBubbleInterval = setInterval(() => {
+  setInterval(() => {
     createBubble('bubbleContainer');
   }, Math.random() * 600 + 400);
 }
