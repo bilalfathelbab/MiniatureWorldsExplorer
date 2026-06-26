@@ -11,11 +11,11 @@
  * @param {number} speciesId
  */
 function showDetail(speciesId) {
-  const species = algaeSpecies.find(s => s.id === speciesId);
+  const species = getSpeciesById(speciesId);
   if (!species) return;
 
-  const imageUrl = getSpeciesImage(species.id);
-  const gradient = gradients[species.color];
+  const imageUrl = species.speciesImage;
+  const gradient = getGradientForColor(species.color);
 
   const clone = buildDetailFragment(species, imageUrl, gradient);
 

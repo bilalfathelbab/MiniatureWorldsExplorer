@@ -12,7 +12,8 @@
  * 3. Start the home-screen bubbles
  * 4. Set up the fullscreen image modal listeners
  */
-function initialize() {
+async function initialize() {
+  await loadSpeciesData();
   renderCards();
   document.getElementById('backButton').addEventListener('click', showHome);
   startBubbles();

@@ -15,9 +15,11 @@ function createAlgaeCard(species) {
   const template = document.getElementById('card-template');
   const clone = template.content.cloneNode(true);
 
-  const imageUrl = getSpeciesImage(species.id);
-  const gradient = gradients[species.color];
-  const border = borderColors[species.id];
+
+  
+  const imageUrl = species.speciesImage || '';
+  const gradient = getGradientForColor(species.color);
+  const border = species.borderColor || 'border-white';
 
   // Connect each card to its detail view.
   const card = clone.querySelector('.algae-card');

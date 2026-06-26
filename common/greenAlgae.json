@@ -1,0 +1,23 @@
+{
+    "id": 2,
+    "name": "Green Algae (Ulvophyceae)",
+    "emoji": "🟢",
+    "color": "bg-green-500",
+    "speciesImage": "images/greenAlgae.png",
+    "habitat": "Freshwater, saltwater, land",
+    "size": "Unicellular to multicellular",
+    "description": "Green algae are a diverse group of photosynthetic organisms found in freshwater, saltwater, and even on land. They can be unicellular or multicellular. They play a crucial role as primary producers in ecosystems, forming the base of many food webs. Green algae are also useful in several industries, including fertilizer production, wastewater treatment, biofuel development, and construction materials.",
+    "characteristics": [
+      "Diverse photosynthetic organisms",
+      "Can be unicellular or multicellular",
+      "Primary producers in ecosystems",
+      "Form base of many food webs"
+    ],
+    "uses": [
+      "Fertilizer production",
+      "Wastewater treatment",
+      "Biofuel development",
+      "Construction materials"
+    ],
+    "borderColor": "border-yellow-300"
+  }

@@ -1,0 +1,23 @@
+{
+    "id": 6,
+    "name": "Java Moss (Hypnaceae)",
+    "emoji": "🌿",
+    "color": "bg-red-500",
+    "speciesImage": "images/javaMoss.png",
+    "habitat": "Southeast Asia, river rocks and logs",
+    "size": "Small green leaves in clumps",
+    "description": "Java moss is a common plant in the aquarium hobby used to give fish hiding spots and to clean water. It is easy to grow and maintain and holds onto food to feed creatures like shrimp and snails. It is found in Southeast Asia growing in rivers on rocks and logs.",
+    "characteristics": [
+      "Small green leaves",
+      "Grows in clumps or strings",
+      "Hardy in different ecosystems",
+      "Thick growth supports fish and shrimp"
+    ],
+    "uses": [
+      "Aquarium cover",
+      "Fish food",
+      "Baby fish nursery",
+      "Water cleaner"
+    ],
+    "borderColor":"border-orange-300"
+  }

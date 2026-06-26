@@ -1,0 +1,10 @@
+{
+  "bg-amber-500":  "from-cyan-400 via-cyan-500 to-blue-600",
+  "bg-green-500":  "from-emerald-400 via-green-500 to-teal-600",
+  "bg-orange-500": "from-teal-400 via-teal-500 to-cyan-600",
+  "bg-blue-500":   "from-blue-400 via-blue-500 to-indigo-600",
+  "bg-purple-500": "from-indigo-400 via-purple-500 to-blue-600",
+  "bg-red-500":    "from-sky-400 via-blue-500 to-cyan-600",
+  "bg-teal-500":   "from-emerald-400 via-teal-500 to-green-600",
+  "bg-yellow-600": "from-cyan-400 via-sky-500 to-blue-600"
+}

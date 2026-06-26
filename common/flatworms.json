@@ -1,0 +1,23 @@
+{
+    "id": 3,
+    "name": "Flatworms (Platyhelminthes sp.)",
+    "emoji": "🪱",
+    "color": "bg-orange-500",
+    "speciesImage": "images/flatWorm.png",
+    "habitat": "Wet soil, saltwater, freshwater",
+    "size": "Microscopic to 130 feet",
+    "description": "Flatworms live in wet soil, saltwater, and freshwater habitats, with some species living parasitically inside other animals. They range in size from microscopic to 130 feet (40 meters) long. Flatworms have remarkable regenerative abilities: when cut in half, each half can grow into a new individual. They help decompose organic matter and recycle nutrients back into their environment.",
+    "characteristics": [
+      "Remarkable regenerative abilities",
+      "Can regenerate from cut pieces",
+      "Wide size range variation",
+      "Some species are parasitic"
+    ],
+    "uses": [
+      "Decompose organic matter",
+      "Recycle nutrients in environment",
+      "Scientific research subjects",
+      "Ecological balance maintenance"
+    ],
+    "borderColor": "border-purple-300"
+  }
