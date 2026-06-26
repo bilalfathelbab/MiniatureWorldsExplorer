@@ -19,7 +19,7 @@ body {
 }
 
 /* Allow touch interactions on interactive elements */
-button, .algae-card, [onclick] {
+button, .algae-card {
   touch-action: auto;
 }
 
