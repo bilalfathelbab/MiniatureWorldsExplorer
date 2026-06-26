@@ -155,7 +155,6 @@ function openFullscreen(imageSrc, caption) {
   image.src             = imageSrc;
   image.alt             = caption;
   capEl.textContent     = caption;
-  image.style.cssText   = '';
 
   modal.classList.remove('hidden');
   modal.classList.add('fullscreen-fade-in');
