@@ -4,12 +4,12 @@ function fitDescription(element, minSize = 16, maxSize = 28
     let size = maxSize;
 
     element.style.fontSize = size + "px";
-
-    while (
+    
+     while (
         element.scrollHeight > element.clientHeight &&
         size > minSize
     ) {
-        size--;
+        size -= 0.25;
         element.style.fontSize = size + "px";
     }
 
