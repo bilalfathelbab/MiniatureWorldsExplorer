@@ -184,9 +184,9 @@
                 <span class="detail-about-icon w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">ℹ️</span>
                 About This Species
               </h3>
-              <div class="flex-1 flex items-center">
-                <p class="detail-description text-gray-800 font-medium leading-relaxed"></p>
-              </div>
+           <div class="flex-1 overflow-hidden">
+    <p class="detail-description text-gray-800 font-medium leading-relaxed"></p>
+</div>
             </div>
           </div>
 
@@ -241,6 +241,7 @@
        data.js must come first (everything else reads from it)
        main.js must come last (calls functions from all others)
        ===================================================== -->
+  <script src="js/textFit.js"></script>
   <script src="js/data.js"></script>
   <script src="js/cards.js"></script>
   <script src="js/bubbles.js"></script>

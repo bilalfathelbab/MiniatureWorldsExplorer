@@ -101,7 +101,13 @@ function buildDetailFragment(species, imageUrl, gradient) {
   aboutIcon.classList.add('bg-gradient-to-r', ...gradient.split(' '));
 
   // Description text.
-  clone.querySelector('.detail-description').textContent = species.description;
+ const description = clone.querySelector('.detail-description');
+
+description.textContent = species.description;
+
+requestAnimationFrame(() => {
+    fitDescription(description);
+});
 
   // Characteristics list.
   const charList = clone.querySelector('.detail-characteristics');
