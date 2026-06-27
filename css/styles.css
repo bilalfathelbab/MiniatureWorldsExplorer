@@ -25,6 +25,77 @@ button,
 }
 
 /* ============================================================
+   DETAIL SPECIES TITLE
+   ============================================================ */
+
+.detail-name {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 3.2rem;
+
+    font-weight: 700;
+
+    color: white;
+
+    line-height: 1.15;
+
+    margin-bottom: 1rem;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+.detail-scientific-name {
+
+    font-size: .7em;
+
+    font-style: italic;
+
+    font-weight: 600;
+}
+
+/* ============================================================
+   TAP IMAGE LABEL
+   ============================================================ */
+
+.tap-image-label {
+
+    background: rgba(255,255,255,.2);
+
+    backdrop-filter: blur(4px);
+
+    padding: .15rem .6rem;
+
+    border-radius: 9999px;
+
+    color: white;
+
+    font-size: .5rem;
+
+    font-weight: 500;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+
+    white-space: nowrap;
+}
+
+.tap-image-container {
+
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+}
+
+
+/* ============================================================
    Home Grid
    ============================================================ */
    .home-grid {
@@ -50,7 +121,7 @@ button,
 
 .detail-title {
     font-family: "Arial", Arial, sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
 
     color: #111827;
@@ -69,15 +140,16 @@ button,
 
 .detail-characteristics li,
 .detail-uses li {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .detail-characteristics .item-text,
 .detail-uses .item-text {
 
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 
-    line-height: 2;
+    line-height: 1;
+  ;
 }
 
 /* ============================================================
@@ -88,13 +160,33 @@ button,
 
     font-family: "Arial Black", Arial, sans-serif;
 
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 2vw, 2.2rem);
 
     color: #d5e042;
 
-    line-height: 1.2;
+    line-height: 1;
 
     text-align: center;
+}
+
+
+/* ============================================================
+   SCIENTIFIC NAME
+   ============================================================ */
+
+.scientific-name {
+
+    display: block;
+
+    margin-top: 0.3rem;
+
+    font-size: 0.8em;
+
+    font-style: italic;
+
+    font-weight: 600;
+
+    white-space: nowrap;
 }
 
  .card-content {
@@ -208,15 +300,13 @@ button,
 
 .circle-icon {
 
-    width: 60%;
+    width: 85%;
 
     aspect-ratio: 1;
 
-    max-width: 250px;
-
     height: auto;
 
-    transition: all .3s ease;
+    flex-shrink: 0;
 }
 
 .circle-icon:nth-child(odd) {
@@ -249,13 +339,13 @@ button,
    ============================================================ */
 
 .detail-about-card p {
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .detail-characteristics .item-number,
 .detail-uses .item-number {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2rem;
+    height: 2rem;
 
     font-size: 1.5rem;
 
