@@ -200,9 +200,9 @@
                 <span class="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">🔬</span>
                 Key Characteristics
               </h3>
-              <div class="flex-1 flex flex-col justify-around">
-                <ul class="detail-characteristics w-full relative z-10 space-y-[2vh]"></ul>
-              </div>            
+              <div class="flex-1 overflow-hidden">
+              <ul class="detail-characteristics w-full relative z-10"></ul>
+             </div>           
             </div>
           </div>
 
@@ -216,7 +216,9 @@
                 <span class="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">🌟</span>
                 Common Uses
               </h3>
-              <ul class="detail-uses w-full relative z-10 space-y-[2vh]"></ul>
+               <div class="flex-1 overflow-hidden">
+               <ul class="detail-uses w-full relative z-10"></ul>
+              </div>
             </div>
           </div>
 
@@ -230,8 +232,12 @@
        Used for both characteristics and uses lists
        ===================================================== -->
   <template id="list-item-template">
-    <li class="flex items-start group">
-      <span class="item-number w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full mr-2 flex items-center justify-center text-white text-xs md:text-sm font-bold mt-0.5 group-hover:scale-110 transition-transform shadow-md flex-shrink-0"></span>
+    <li class="flex items-center group">
+      <span class="item-number
+             w-8 h-8
+             sm:w-9 sm:h-9
+             md:w-10 md:h-10
+             rounded-full mr-2 flex items-center justify-center text-white text-xs md:text-sm font-bold mt-0.5 group-hover:scale-110 transition-transform shadow-md flex-shrink-0"></span>
       <span class="item-text text-gray-800 group-hover:text-gray-900 transition-colors font-medium flex-1 leading-snug"></span>
     </li>
   </template>
