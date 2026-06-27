@@ -25,6 +25,26 @@ button,
 }
 
 /* ============================================================
+   Home Grid
+   ============================================================ */
+   .home-grid {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 2rem;
+
+    padding: 2rem;
+
+    overflow: hidden;
+
+    align-items: stretch;
+}
+
+/* ============================================================
    DETAIL COLUMN HEADINGS
    ============================================================ */
 
@@ -64,15 +84,51 @@ button,
    ALGAE CARDS
    ============================================================ */
 
+   .card-title {
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 2rem;
+
+    color: #d5e042;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+ .card-content {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 1rem;
+}
+
 .algae-card {
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  animation: gentleFloat 4s ease-in-out infinite;
-  position: relative;
-  overflow: hidden;
-  height: clamp(150px, 30vw, 300px);
-  aspect-ratio: 1 / 1;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(10px);
+
+    border: 2px solid rgba(255,255,255,.4);
+
+    animation: gentleFloat 4s ease-in-out infinite;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
 .algae-card::before {
@@ -151,12 +207,16 @@ button,
    ============================================================ */
 
 .circle-icon {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  animation: gentleRotate 6s ease-in-out infinite;
-  width: clamp(80px, 50vw, 160px);
-  height: clamp(80px, 50vw, 160px);
+
+    width: 60%;
+
+    aspect-ratio: 1;
+
+    max-width: 250px;
+
+    height: auto;
+
+    transition: all .3s ease;
 }
 
 .circle-icon:nth-child(odd) {

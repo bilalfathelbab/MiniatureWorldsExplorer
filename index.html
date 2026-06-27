@@ -40,7 +40,7 @@
 
     <!-- Species card grid: populated by cards.js -->
     <main id="homeView"
-          class="flex-1 overflow-hidden grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6 p-2 md:p-4 auto-rows-fr">
+      class="home-grid"
     </main>
 
   </div>
@@ -51,10 +51,10 @@
        ===================================================== -->
   <template id="card-template">
     <div class="algae-card rounded-xl shadow-lg p-3 md:p-5 cursor-pointer border-2 border-transparent hover:border-white/30">
-      <div class="text-center h-full flex flex-col items-center justify-center">
+       <div class="text-center h-full flex flex-col items-center justify-center">
 
         <!-- Species image circle -->
-        <div class="card-icon circle-icon rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center shadow-lg overflow-hidden border-4">
+      <div class="card-icon circle-icon rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center shadow-lg overflow-hidden border-4">
           <img class="card-img w-full h-full object-cover rounded-full scale-125" loading="lazy" src="" alt="">
           <!-- Emoji fallback shown if image fails to load -->
           <span class="card-emoji" style="display:none;"></span>
