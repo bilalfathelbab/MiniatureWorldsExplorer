@@ -10,7 +10,7 @@ const speciesFiles = [
   'common/seedShrimp.json',
   'common/ciliate.json',
   'common/javaMoss.json',
-  'common/rotifier.json',
+  'common/rotifer.json',
   'common/nematode.json'
 ];
 
