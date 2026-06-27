@@ -1,0 +1,23 @@
+{
+    "id": 1,
+    "name": "Diatom (Bacillariophyceae)",
+    "emoji": "💎",
+    "color": "bg-amber-500",
+    "speciesImage": "images/diatom.png",
+    "habitat": "Aquatic environments",
+    "size": "Unicellular",
+    "description": "Diatoms are golden-brown unicellular algae with silica, or glass-like, cell walls. They are essential for ecological balance and have significant industrial, biomedical, and agricultural applications. Their unique properties make them valuable across multiple sectors, contributing to sustainability and environmental health.",
+    "characteristics": [
+      "Golden-brown coloration",
+      "Silica (glass-like) cell walls",
+      "Unicellular structure",
+      "Essential for ecological balance"
+    ],
+    "uses": [
+      "Industrial applications",
+      "Biomedical uses",
+      "Agricultural applications",
+      "Environmental sustainability"
+    ],
+    "borderColor": "border-amber-300"
+  }

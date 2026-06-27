@@ -18,23 +18,117 @@ body {
   height: 100%;
 }
 
-/* Allow touch interactions on interactive elements */
-button, .algae-card, [onclick] {
+/* Allow touch interactions on interactive elements. */
+button,
+.algae-card {
   touch-action: auto;
+}
+
+/* ============================================================
+   Home Grid
+   ============================================================ */
+   .home-grid {
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 2rem;
+
+    padding: 2rem;
+
+    overflow: hidden;
+
+    align-items: stretch;
+}
+
+/* ============================================================
+   DETAIL COLUMN HEADINGS
+   ============================================================ */
+
+.detail-title {
+    font-family: "Arial", Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: #111827;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 1rem;
+
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   Key characteristics and uses list styles 
+   ============================================================ */
+
+.detail-characteristics li,
+.detail-uses li {
+    margin-bottom: 3.5rem;
+}
+
+.detail-characteristics .item-text,
+.detail-uses .item-text {
+
+    font-size: 1.8rem;
+
+    line-height: 2;
 }
 
 /* ============================================================
    ALGAE CARDS
    ============================================================ */
 
+   .card-title {
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    font-size: 2rem;
+
+    color: #d5e042;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+ .card-content {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 1rem;
+}
+
 .algae-card {
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  animation: gentleFloat 4s ease-in-out infinite;
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(10px);
+
+    border: 2px solid rgba(255,255,255,.4);
+
+    animation: gentleFloat 4s ease-in-out infinite;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
 .algae-card::before {
@@ -63,31 +157,37 @@ button, .algae-card, [onclick] {
   animation-delay: -1s;
   box-shadow: 0 8px 32px rgba(34, 197, 94, 0.3);
 }
+
 .algae-card:nth-child(8n+3) {
   background: linear-gradient(135deg, rgba(20, 184, 166, 0.8) 0%, rgba(13, 148, 136, 0.9) 100%);
   animation-delay: -2s;
   box-shadow: 0 8px 32px rgba(20, 184, 166, 0.3);
 }
+
 .algae-card:nth-child(8n+4) {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.8) 0%, rgba(29, 78, 216, 0.9) 100%);
   animation-delay: -3s;
   box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
 }
+
 .algae-card:nth-child(8n+5) {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(67, 56, 202, 0.9) 100%);
   animation-delay: -1.5s;
   box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
 }
+
 .algae-card:nth-child(8n+6) {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.8) 0%, rgba(2, 132, 199, 0.9) 100%);
   animation-delay: -2.5s;
   box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
 }
+
 .algae-card:nth-child(8n+7) {
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(4, 120, 87, 0.9) 100%);
   animation-delay: -0.5s;
   box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
 }
+
 .algae-card:nth-child(8n+8) {
   background: linear-gradient(135deg, rgba(8, 145, 178, 0.8) 0%, rgba(12, 74, 110, 0.9) 100%);
   animation-delay: -3.5s;
@@ -107,12 +207,16 @@ button, .algae-card, [onclick] {
    ============================================================ */
 
 .circle-icon {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  animation: gentleRotate 6s ease-in-out infinite;
-  width: clamp(80px, 50vw, 160px);
-  height: clamp(80px, 50vw, 160px);
+
+    width: 60%;
+
+    aspect-ratio: 1;
+
+    max-width: 250px;
+
+    height: auto;
+
+    transition: all .3s ease;
 }
 
 .circle-icon:nth-child(odd) {
@@ -126,7 +230,7 @@ button, .algae-card, [onclick] {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, rgba(255,255,255,0.3), transparent, rgba(255,255,255,0.3));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent, rgba(255, 255, 255, 0.3));
   transform: rotate(-45deg) translateX(-100%);
   transition: transform 0.6s ease;
 }
@@ -138,6 +242,24 @@ button, .algae-card, [onclick] {
 .algae-card:hover .circle-icon {
   transform: rotate(5deg) scale(1.1);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   DETAIL CARD TEXT SCALING
+   ============================================================ */
+
+.detail-about-card p {
+    line-height: 1.5;
+}
+
+.detail-characteristics .item-number,
+.detail-uses .item-number {
+    width: 3.2rem;
+    height: 3.2rem;
+
+    font-size: 1.5rem;
+
+    flex-shrink: 0;
 }
 
 /* ============================================================

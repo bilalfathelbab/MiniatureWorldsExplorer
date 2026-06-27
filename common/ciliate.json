@@ -1,0 +1,23 @@
+{
+    "id": 5,
+    "name": "Ciliate (Ciliophora sp.)",
+    "emoji": "🔬",
+    "color": "bg-purple-500",
+    "speciesImage": "images/ciliate.png",
+    "habitat": "Wherever water exists",
+    "size": "Microscopic",
+    "description": "Ciliates are tiny single-celled protists found wherever water exists. They are common in both freshwater and saltwater environments and play important ecological roles. Inside the stomachs of ruminants such as goats, sheep, and cows, ciliates help with digestion.",
+    "characteristics": [
+      "Single-celled protists",
+      "Found wherever water exists",
+      "Important ecological roles",
+      "Help with ruminant digestion"
+    ],
+    "uses": [
+      "Digestive aid in ruminants",
+      "Ecological balance",
+      "Water quality indicators",
+      "Scientific research"
+    ],
+    "borderColor":"border-lime-300"
+  }

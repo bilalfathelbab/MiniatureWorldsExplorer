@@ -1,0 +1,23 @@
+{
+    "id": 4,
+    "name": "Seed Shrimp (Ostracoda sp.)",
+    "emoji": "🌰",
+    "color": "bg-blue-500",
+    "speciesImage": "images/seedShrimp.png",
+    "habitat": "Ocean floors, freshwater",
+    "size": "Microscopic",
+    "description": "Ostracods are small relatives of shrimp named for their shell that goes over them like a seed. They make up a lot of the bottom of the food chain in the ocean and are eaten by everything from baby fish to giant whale sharks. These seed shrimp have been found in fossils dated to over 200 million years old.",
+    "characteristics": [
+      "Oval shaped bodies",
+      "Fast moving",
+      "Form the base of marine food chains",
+      "Eat algae, bacteria, and other microscopic creatures"
+    ],
+    "uses": [
+      "Fossil ageing",
+      "Water quality assessments",
+      "Fish food",
+      "Toxicology research"
+    ],
+    "borderColor":"border-amber-300"
+  }
