@@ -40,11 +40,14 @@ function createAlgaeCard(species) {
   });
   emoji.textContent = species.emoji;
 
-  // Italicize the scientific portion in brackets.
-  const nameEl = clone.querySelector('.card-name');
-  nameEl.innerHTML = species.name.replace(/\(([^)]+)\)/, '<em>($1)</em>');
+// Put the scientific name on a new line and style it separately.
+const nameEl = clone.querySelector('.card-name');
+nameEl.innerHTML = species.name.replace(
+    /\(([^)]+)\)/,
+    '<br><span class="scientific-name">($1)</span>'
+);
 
-  return clone;
+return clone;
 }
 
 /**

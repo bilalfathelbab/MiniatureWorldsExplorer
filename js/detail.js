@@ -90,7 +90,12 @@ function buildDetailFragment(species, imageUrl, gradient) {
   imgWrapper.addEventListener('click', () => openFullscreen(imageUrl, species.name));
 
   // Name, habitat, and size.
-  clone.querySelector('.detail-name').textContent = species.name;
+  const title = clone.querySelector('.detail-name');
+
+title.innerHTML = species.name.replace(
+    /\(([^)]+)\)/,
+    '<span class="detail-scientific-name">($1)</span>'
+);
   clone.querySelector('.detail-habitat').textContent = '📍 ' + species.habitat;
   clone.querySelector('.detail-size').textContent = '📏 ' + species.size;
 
