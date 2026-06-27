@@ -6,7 +6,7 @@
 const speciesFiles = [
   'common/diatom.json',
   'common/greenAlgae.json',
-  'common/flatworms.json',
+  'common/flatWorm.json',
   'common/seedShrimp.json',
   'common/ciliate.json',
   'common/javaMoss.json',
