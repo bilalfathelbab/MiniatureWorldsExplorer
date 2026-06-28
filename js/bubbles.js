@@ -4,8 +4,16 @@
 // the home view and the detail view.
 // ============================================================
 
-// Interval reference so detail bubbles can be stopped when leaving the view
+// Interval references so bubble generation can be stopped cleanly
 let detailBubbleInterval = null;
+let homeBubbleInterval = null;
+let homeBubbleTimeouts = [];
+let detailBubbleTimeouts = [];
+
+function clearBubbleTimers(timerIds) {
+  timerIds.forEach((timerId) => clearTimeout(timerId));
+  timerIds.length = 0;
+}
 
 /**
  * Creates a single bubble element and appends it to a container.
@@ -19,23 +27,29 @@ function createBubble(containerId = 'bubbleContainer') {
   const bubble = document.createElement('div');
   bubble.className = 'bubble';
 
-  // Random size between 10px and 50px
   const size = Math.random() * 40 + 10;
   bubble.style.width = size + 'px';
   bubble.style.height = size + 'px';
-
-  // Random horizontal start position
   bubble.style.left = Math.random() * 100 + '%';
 
-  // Random animation duration between 8s and 15s
-  bubble.style.animationDuration = (Math.random() * 7 + 8) + 's';
+  const duration = Math.random() * 7 + 8;
+  bubble.style.animation = `bubbleFloat ${duration}s ease-in-out`;
+
+  // Remove exactly when animation ends — no timing gap
+  bubble.addEventListener('animationend', () => {
+    bubble.remove();
+  }, { once: true });
 
   container.appendChild(bubble);
+}
 
-  // Clean up after animation to prevent DOM bloat
-  setTimeout(() => {
-    if (bubble.parentNode) bubble.parentNode.removeChild(bubble);
-  }, 15000);
+function stopHomeBubbles() {
+  if (homeBubbleInterval) {
+    clearInterval(homeBubbleInterval);
+    homeBubbleInterval = null;
+  }
+
+  clearBubbleTimers(homeBubbleTimeouts);
 }
 
 /**
@@ -43,48 +57,75 @@ function createBubble(containerId = 'bubbleContainer') {
  * Creates an initial burst then a steady trickle.
  */
 function startBubbles() {
-  // Initial burst
+  stopHomeBubbles();
+
   for (let i = 0; i < 30; i++) {
-    setTimeout(() => createBubble('bubbleContainer'), i * 150);
+    const id = setTimeout(() => createBubble('bubbleContainer'), i * 150);
+    homeBubbleTimeouts.push(id);
   }
 
-  // Steady trickle
-  setInterval(() => {
-    createBubble('bubbleContainer');
-  }, Math.random() * 600 + 400);
-}
+  const trickleStartId = setTimeout(() => {
+    homeBubbleInterval = setInterval(() => createBubble('bubbleContainer'), 800);
+  }, 30 * 150 + 200);
+
+  homeBubbleTimeouts.push(trickleStartId);
+}g
 
 /**
  * Starts bubble generation for the detail view.
  * Clears any leftover bubbles from a previous visit first.
  */
-function startDetailBubbles() {
-  const container = document.getElementById('detailBubbleContainer');
-  if (container) container.innerHTML = '';
+function startBubbles() {
+  stopHomeBubbles();
 
-  // Initial burst
-  for (let i = 0; i < 25; i++) {
-    setTimeout(() => createBubble('detailBubbleContainer'), i * 120);
+  // Initial burst — track each timeout so stop() can cancel them
+  for (let i = 0; i < 30; i++) {
+    const id = setTimeout(() => createBubble("bubbleContainer"), i * 150);
+    homeBubbleTimeouts.push(id); // ← was missing
   }
 
-  // Steady trickle
-  detailBubbleInterval = setInterval(() => {
-    createBubble('detailBubbleContainer');
-  }, Math.random() * 700 + 500);
+  // Delay the trickle until AFTER the burst finishes (~4.5s + buffer)
+  const trickleStartId = setTimeout(
+    () => {
+      homeBubbleInterval = setInterval(() => {
+        createBubble("bubbleContainer");
+      }, 800); // ← fixed rate, not random (random causes drift)
+    },
+    30 * 150 + 200,
+  ); // start trickle after burst completes
+
+  homeBubbleTimeouts.push(trickleStartId);
 }
 
-/**
- * Stops the detail view bubble generation and clears the container.
- * Called when navigating back to the home grid.
- */
-function stopDetailBubbles() {
-  if (detailBubbleInterval) {
-    clearInterval(detailBubbleInterval);
-    detailBubbleInterval = null;
+function startDetailBubbles() {
+  // Same pattern — stop first, track burst timeouts, delay trickle
+  stopDetailBubbles();
+
+  for (let i = 0; i < 25; i++) {
+    const id = setTimeout(() => createBubble("detailBubbleContainer"), i * 120);
+    detailBubbleTimeouts.push(id); // ← was missing
   }
 
-  const container = document.getElementById('detailBubbleContainer');
-  if (container) {
-    setTimeout(() => { container.innerHTML = ''; }, 500);
-  }
+  const trickleStartId = setTimeout(
+    () => {
+      detailBubbleInterval = setInterval(() => {
+        createBubble("detailBubbleContainer");
+      }, 900);
+    },
+    25 * 120 + 200,
+  );
+
+  detailBubbleTimeouts.push(trickleStartId);
+}
+clearBubbleTimers(detailBubbleTimeouts);
+
+const container = document.getElementById("detailBubbleContainer");
+if (container) {
+  container.querySelectorAll(".bubble").forEach((bubble) => {
+    bubble.classList.add("bubble-removing");
+  });
+
+  setTimeout(() => {
+    if (container) container.innerHTML = "";
+  }, 400);
 }
