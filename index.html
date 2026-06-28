@@ -49,7 +49,7 @@
        Cloned once per species by cards.js; never visible directly
        ===================================================== -->
   <template id="card-template">
-    <div class="algae-card rounded-xl shadow-lg p-3 md:p-5 cursor-pointer border-2 border-transparent hover:border-white/30">
+    <div class="species-card">
        <div class="card-content">
 
         <!-- Species image circle -->
@@ -173,7 +173,7 @@
         <div class="h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
 
           <!-- About This Species -->
-          <div class="detail-card detail-about-card bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col">
+          <div class="detail-card detail-about-card hover:scale-105">
             <!-- Colored top bar: color set by detail.js -->
             <div class="detail-about-bar absolute top-0 left-0 w-full h-2"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-50"></div>
@@ -189,7 +189,7 @@
           </div>
 
           <!-- Key Characteristics -->
-          <div class="detail-card rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col">
+          <div class="detail-card detail-about-card hover:scale-105">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-teal-500"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-emerald-50 to-teal-50 opacity-40"></div>
             <div class="relative z-10 flex flex-col h-full">
@@ -204,7 +204,7 @@
           </div>
 
           <!-- Common Uses -->
-          <div class="detail-card rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col">
+          <div class="detail-card detail-about-card hover:scale-105">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50 opacity-40"></div>
             <div class="relative z-10 flex flex-col h-full">
