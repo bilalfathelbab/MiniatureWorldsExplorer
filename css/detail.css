@@ -1,0 +1,165 @@
+/* ============================================================
+   Detail header
+   ============================================================ */
+
+   
+
+/* ============================================================
+   Detail species name
+   ============================================================ */
+   .detail-name {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 3.2rem;
+
+    font-weight: 700;
+
+    color: white;
+
+    line-height: 1.15;
+
+    margin-bottom: 1rem;
+
+    text-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+.detail-scientific-name {
+
+    font-size: .7em;
+
+    font-style: italic;
+
+    font-weight: 600;
+}
+
+/* ============================================================
+   Detail image
+   ============================================================ */
+
+
+/* ============================================================
+   Tap image label
+   ============================================================ */
+
+   .tap-image-label {
+
+    background: rgba(255,255,255,.2);
+
+    backdrop-filter: blur(4px);
+
+    padding: .15rem .6rem;
+
+    border-radius: 9999px;
+
+    color: white;
+
+    font-size: .5rem;
+
+    font-weight: 500;
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+
+    white-space: nowrap;
+}
+
+.tap-image-container {
+
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+}
+
+/* ============================================================
+   Detail information cards
+   ============================================================ */
+
+   .detail-card {
+
+    background: white;
+
+    border: 2px solid #e5e7eb;
+
+    border-radius: 1rem;
+
+    padding: 1.25rem;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: all .3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.1),
+        0 4px 10px rgba(0,0,0,.04);
+}
+
+/* ============================================================
+   Detail card titles
+   ============================================================ */
+
+.detail-title {
+    font-family: "Arial", Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: #111827;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 1rem;
+
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   Detail card content
+   ============================================================ */
+
+   .detail-about-card p {
+    line-height: 1.4;
+}
+
+   /* ============================================================
+   Detail lists 
+   ============================================================ */
+
+   .detail-characteristics li,
+.detail-uses li {
+    margin-bottom: 2.5rem;
+}
+
+.detail-characteristics .item-text,
+.detail-uses .item-text {
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+  ;
+}
+
+.detail-characteristics .item-number,
+.detail-uses .item-number {
+    width: 2rem;
+    height: 2rem;
+
+    font-size: 1.5rem;
+
+    flex-shrink: 0;
+}
+

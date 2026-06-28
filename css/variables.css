@@ -1,0 +1,15 @@
+:root {
+
+    --background-colour: #00577c;
+
+    --title-colour: #d5e042;
+
+    --card-radius: .75rem;
+
+    --card-shadow:
+        0 10px 25px rgba(0,0,0,.1),
+        0 4px 10px rgba(0,0,0,.04);
+
+    --transition-speed: .3s;
+
+}
