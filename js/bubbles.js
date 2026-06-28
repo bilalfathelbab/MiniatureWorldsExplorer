@@ -39,6 +39,7 @@ function stopHomeBubbles() {
   }
   clearBubbleTimers(homeBubbleTimeouts);
 }
+clearBubbleTimers(detailBubbleTimeouts);
 
 function stopDetailBubbles() {
   if (detailBubbleInterval) {
