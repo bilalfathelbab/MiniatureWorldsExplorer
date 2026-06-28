@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="h-full overflow-hidden" style="background-color: #00577c;">
+<body class="app-background h-full overflow-hidden">
 
   <!-- =====================================================
        Floating bubbles: home screen background
@@ -26,8 +26,7 @@
   <div class="h-full flex flex-col relative z-10">
 
     <header class="flex-shrink-0 text-center py-3 md:py-4 px-2 md:px-4">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 md:mb-2"
-          style="font-family: 'Arial Black', Arial, sans-serif; color: #d5e042; text-transform: uppercase;">
+      <h1 class="page-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 md:mb-2">
         MINIATURE WORLDS EXPLORER
       </h1>
       <p class="text-base sm:text-lg md:text-xl font-semibold text-teal-300 drop-shadow-lg">
@@ -174,8 +173,7 @@
         <div class="h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
 
           <!-- About This Species -->
-          <div class="detail-about-card bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col"
-               style="box-shadow:0 10px 25px rgba(0,0,0,0.1),0 4px 10px rgba(0,0,0,0.04);">
+          <div class="detail-card detail-about-card bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col">
             <!-- Colored top bar: color set by detail.js -->
             <div class="detail-about-bar absolute top-0 left-0 w-full h-2"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-50"></div>
@@ -191,8 +189,7 @@
           </div>
 
           <!-- Key Characteristics -->
-          <div class="bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col"
-               style="box-shadow:0 10px 25px rgba(0,0,0,0.1),0 4px 10px rgba(0,0,0,0.04);">
+          <div class="detail-card rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-teal-500"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-emerald-50 to-teal-50 opacity-40"></div>
             <div class="relative z-10 flex flex-col h-full">
@@ -207,8 +204,7 @@
           </div>
 
           <!-- Common Uses -->
-          <div class="bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col"
-               style="box-shadow:0 10px 25px rgba(0,0,0,0.1),0 4px 10px rgba(0,0,0,0.04);">
+          <div class="detail-card rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50 opacity-40"></div>
             <div class="relative z-10 flex flex-col h-full">

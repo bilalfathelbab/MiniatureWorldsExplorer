@@ -18,10 +18,44 @@ body {
   height: 100%;
 }
 
+/* ============================================================
+   APP LAYOUT
+   ============================================================ */
+
+.app-background {
+
+    background-color: #00577c;
+}
+
 /* Allow touch interactions on interactive elements. */
 button,
-.algae-card {
+.species-card {
   touch-action: auto;
+}
+
+/* ============================================================
+   PAGE TITLES
+   ============================================================ */
+
+.page-title {
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    color: #d5e042;
+
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   DETAIL VIEW INFORMATION CARDS
+   Shared styling for the three information cards:
+   ============================================================ */
+
+.detail-card {
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.1),
+        0 4px 10px rgba(0,0,0,.04);
 }
 
 /* ============================================================
