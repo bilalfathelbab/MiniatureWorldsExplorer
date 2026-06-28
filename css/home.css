@@ -26,7 +26,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
 
-    transition: all 0.3s ease;
+    transition: all var(--transition-speed) ease;
 
     backdrop-filter: blur(10px);
 

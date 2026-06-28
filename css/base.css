@@ -24,7 +24,7 @@ body {
 
 .app-background {
 
-    background-color: #00577c;
+    background-color: var(--background-colour);
 }
 
 /* ============================================================
@@ -43,7 +43,7 @@ button,
 
     font-family: "Arial Black", Arial, sans-serif;
 
-    color: #d5e042;
+    color: var(--title-colour);
 
     text-transform: uppercase;
 }

@@ -1,10 +1,23 @@
+/* ============================================================
+   COLOUR PALETTE
+   ============================================================ */
+
 :root {
 
+    /* Brand colours */
     --background-colour: #00577c;
-
     --title-colour: #d5e042;
 
-    --card-radius: .75rem;
+    /* Text colours */
+    --text-dark: #111827;
+    --text-light: white;
+
+    /* Card colours */
+    --card-background: white;
+    --card-border: #e5e7eb;
+
+    /* Common effects */
+    --card-radius: 1rem;
 
     --card-shadow:
         0 10px 25px rgba(0,0,0,.1),

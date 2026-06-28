@@ -84,11 +84,11 @@
 
    .detail-card {
 
-    background: white;
+    background: var(--card-background);
 
-    border: 2px solid #e5e7eb;
+    border: 2px solid var(--card-border);
 
-    border-radius: 1rem;
+    border-radius: var(--card-radius);
 
     padding: 1.25rem;
 
@@ -102,9 +102,7 @@
 
     transition: all .3s ease;
 
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.1),
-        0 4px 10px rgba(0,0,0,.04);
+    box-shadow: var(--card-shadow);
 }
 
 /* ============================================================

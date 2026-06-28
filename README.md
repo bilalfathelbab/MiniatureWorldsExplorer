@@ -2,7 +2,7 @@
 
 An interactive educational web application for exploring the microscopic organisms found in freshwater ecosystems.
 
-Designed for museum visitors, students, and educators, Miniature Worlds Explorer presents scientific information in a simple, engaging interface optimized for touch devices such as iPads.
+Designed for museum visitors, students, and educators, Miniature Worlds Explorer presents scientific information in a simple, engaging interface optimized for iPads.
 
 ## Live Demo
 
