@@ -30,6 +30,7 @@ function showDetail(speciesId) {
   detailView.classList.add('overlay-fade-in');
   homeView.classList.add('hidden');
 
+  stopHomeBubbles();
   startDetailBubbles();
 }
 
@@ -49,6 +50,7 @@ function showHome() {
   }
 
   stopDetailBubbles();
+  startBubbles();
 
   setTimeout(() => {
     detailView.classList.add('hidden');
