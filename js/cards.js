@@ -26,7 +26,7 @@ function createSpeciesCard(species) {
   card.addEventListener('click', () => showDetail(species.id));
 
   // Apply the image circle gradient and border color.
-  const icon = clone.querySelector('.card-icon');
+  const icon = clone.querySelector('.species-image');
   icon.classList.add('bg-gradient-to-br', ...gradient.split(' '), border);
 
   // Species image with emoji fallback
