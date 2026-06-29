@@ -1,0 +1,49 @@
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+html {
+  touch-action: none;
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  touch-action: none;
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* ============================================================
+   APP LAYOUT
+   ============================================================ */
+
+.app-background {
+
+    background-color: var(--background-colour);
+}
+
+/* ============================================================
+   Interactive elements
+   ============================================================ */
+button,
+.species-card {
+  touch-action: auto;
+}
+
+/* ============================================================
+   PAGE TITLES
+   ============================================================ */
+
+.page-title {
+
+    font-family: "Arial Black", Arial, sans-serif;
+
+    color: var(--title-colour);
+
+    text-transform: uppercase;
+}

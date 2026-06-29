@@ -14,7 +14,7 @@
  */
 async function initialize() {
   await loadSpeciesData();
-  renderCards();
+  renderSpeciesCards();
   document.getElementById('backButton').addEventListener('click', showHome);
   startBubbles();
   initFullscreen();

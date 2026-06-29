@@ -9,11 +9,33 @@
   <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
-  <!-- Project styles -->
-  <link rel="stylesheet" href="css/styles.css">
+<!-- =====================================================
+     PROJECT STYLES
+     ===================================================== -->
+
+<!-- Theme -->
+<link rel="stylesheet" href="css/variables.css">
+
+<!-- Global styles -->
+<link rel="stylesheet" href="css/base.css">
+
+<!-- Home screen -->
+<link rel="stylesheet" href="css/home.css">
+
+<!-- Detail screen -->
+<link rel="stylesheet" href="css/detail.css">
+
+<!-- Bubble effects -->
+<link rel="stylesheet" href="css/bubbles.css">
+
+<!-- Animations -->
+<link rel="stylesheet" href="css/animations.css">
+
+<!-- Responsive overrides -->
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 
-<body class="h-full overflow-hidden" style="background-color: #00577c;">
+<body class="app-background h-full overflow-hidden">
 
   <!-- =====================================================
        Floating bubbles: home screen background
@@ -21,13 +43,13 @@
   <div id="bubbleContainer" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
 
   <!-- =====================================================
-       HOME VIEW
+       HOME SCREEN
        ===================================================== -->
   <div class="h-full flex flex-col relative z-10">
 
+    <!-- Home page header -->
     <header class="flex-shrink-0 text-center py-3 md:py-4 px-2 md:px-4">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 md:mb-2"
-          style="font-family: 'Arial Black', Arial, sans-serif; color: #d5e042; text-transform: uppercase;">
+      <h1 class="page-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-1 md:mb-2">
         MINIATURE WORLDS EXPLORER
       </h1>
       <p class="text-base sm:text-lg md:text-xl font-semibold text-teal-300 drop-shadow-lg">
@@ -38,7 +60,7 @@
       </p>
     </header>
 
-    <!-- Species card grid: populated by cards.js -->
+   <!-- Species card grid: populated by cards.js -->
     <main id="homeView"
       class="home-grid"
     </main>
@@ -46,29 +68,36 @@
   </div>
 
   <!-- =====================================================
-       CARD TEMPLATE
-       Cloned once per species by cards.js; never visible directly
-       ===================================================== -->
+     HOME SPECIES CARD TEMPLATE
+     Cloned once per species by cards.js
+     ===================================================== -->
   <template id="card-template">
-    <div class="algae-card rounded-xl shadow-lg p-3 md:p-5 cursor-pointer border-2 border-transparent hover:border-white/30">
-       <div class="card-content">
 
-        <!-- Species image circle -->
-      <div class="card-icon circle-icon rounded-full mx-auto mb-2 md:mb-4 flex items-center justify-center shadow-lg overflow-hidden border-4">
+
+      <div class="species-card">
+
+         <div class="card-content">
+
+        <!-- Home species image -->
+      <div class="species-image border-4">
           <img class="card-img w-full h-full object-cover rounded-full scale-125" loading="lazy" src="" alt="">
           <!-- Emoji fallback shown if image fails to load -->
           <span class="card-emoji" style="display:none;"></span>
         </div>
 
-        <!-- Species name -->
+        <!-- Home species title -->
         <h3 class="card-name card-title"></h3>
       </div>
+
     </div>
+
+
   </template>
 
   <!-- =====================================================
-       DETAIL VIEW (hidden until a card is clicked)
-       ===================================================== -->
+     DETAIL SCREEN
+     Hidden until a species card is selected.
+     ===================================================== -->
   <div id="detailView" class="hidden fixed inset-0 z-50" style="background-color: #00577c;">
 
     <!-- Bubbles for the detail view -->
@@ -90,7 +119,9 @@
       </div>
     </div>
 
-    <!-- Detail view layout -->
+<!-- =====================================================
+     HOME SCREEN
+     ===================================================== -->
     <div class="h-full flex flex-col relative z-10">
 
       <!-- Back button -->
@@ -101,11 +132,13 @@
           <svg class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 mr-2 md:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
+
           <span>Back to Species Grid</span>
+          
         </button>
       </div>
 
-      <!-- Detail content panel: filled by detail.js using the template below -->
+      <!-- Detail content -->
       <div class="flex-1 px-4 pb-4 overflow-hidden">
         <div class="bg-white rounded-2xl shadow-xl h-full overflow-hidden detail-view">
           <div id="detailContent" class="h-full"></div>
@@ -122,7 +155,7 @@
   <template id="detail-template">
     <div class="h-full flex flex-col">
 
-      <!-- Colored header banner -->
+      <!-- Detail header -->
       <div class="detail-header flex-shrink-0 relative h-24 sm:h-32 md:h-40 lg:h-48 flex items-center overflow-hidden">
         <div class="absolute inset-0 bg-black bg-opacity-10"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
@@ -130,7 +163,7 @@
         <div class="relative z-10 flex items-center w-full px-3 sm:px-4 md:px-8">
           <div class="flex items-center flex-col sm:flex-row flex-1 gap-3 sm:gap-4 md:gap-10">
 
-            <!-- Clickable species image -->
+            <!-- Detail species image -->
             <div class="flex flex-col items-center">
               <div class="detail-img-wrapper w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full border-4 border-white/50 shadow-2xl overflow-hidden bg-white/15 backdrop-blur-sm hover:scale-110 transition-transform duration-300 ring-4 ring-white/20 cursor-pointer group">
                 <img class="detail-img w-full h-full object-cover scale-125 group-hover:brightness-110 transition-all duration-300"
@@ -145,7 +178,7 @@
               </div>
             </div>
 
-            <!-- Name + habitat + size -->
+            <!-- Species information -->
             <div class="text-white flex-1">
               <h2 class="detail-name"></h2>
               <div class="flex flex-col sm:flex-row gap-1 sm:gap-2 md:gap-4 text-xs sm:text-sm md:text-base flex-wrap">
@@ -156,33 +189,40 @@
           </div>
         </div>
 
-        <div class="tap-image-container">
+     <!-- Tap image label -->
+
+   <div class="tap-image-container">
+
     <div class="tap-image-label">
+
         Tap the image to view up close
+
     </div>
 </div>
 
-        <!-- Decorative animated dots -->
+        <!-- Header decorations -->
         <div class="absolute top-6 left-6 w-3 h-3 bg-white/40 rounded-full animate-ping"></div>
         <div class="absolute top-16 right-12 w-2 h-2 bg-white/50 rounded-full animate-ping" style="animation-delay:1s;"></div>
         <div class="absolute bottom-12 left-16 w-4 h-4 bg-white/30 rounded-full animate-ping" style="animation-delay:2s;"></div>
         <div class="absolute bottom-6 right-6 w-2 h-2 bg-white/45 rounded-full animate-ping" style="animation-delay:0.5s;"></div>
       </div>
 
-      <!-- Three info columns -->
+      <!-- Detail information cards -->
       <div class="flex-1 p-2 sm:p-3 md:p-4 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <div class="h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
 
-          <!-- About This Species -->
-          <div class="detail-about-card bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col"
-               style="box-shadow:0 10px 25px rgba(0,0,0,0.1),0 4px 10px rgba(0,0,0,0.04);">
-            <!-- Colored top bar: color set by detail.js -->
+          <!-- About card -->
+          <div class="detail-card detail-about-card hover:scale-105">
+            <!-- Accent bar -->
             <div class="detail-about-bar absolute top-0 left-0 w-full h-2"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-50"></div>
             <div class="relative z-10 flex flex-col h-full">
               <h3 class="detail-title">
+
                 <span class="detail-about-icon w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">ℹ️</span>
+                
                 About This Species
+
               </h3>
            <div class="flex-1 overflow-hidden">
           <p class="detail-description text-gray-800 font-medium leading-relaxed"></p>
@@ -190,15 +230,16 @@
             </div>
           </div>
 
-          <!-- Key Characteristics -->
-          <div class="bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col"
-               style="box-shadow:0 10px 25px rgba(0,0,0,0.1),0 4px 10px rgba(0,0,0,0.04);">
+          <!-- Characteristics card -->
+          <div class="detail-card detail-about-card hover:scale-105">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-teal-500"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-emerald-50 to-teal-50 opacity-40"></div>
             <div class="relative z-10 flex flex-col h-full">
               <h3 class="detail-title">
                 <span class="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">🔬</span>
+                
                 Key Characteristics
+
               </h3>
               <div class="flex-1 overflow-hidden">
               <ul class="detail-characteristics w-full relative z-10"></ul>
@@ -206,15 +247,16 @@
             </div>
           </div>
 
-          <!-- Common Uses -->
-          <div class="bg-white rounded-lg sm:rounded-2xl p-3 sm:p-4 md:p-5 border-2 border-gray-200 relative overflow-hidden hover:scale-105 transition-all duration-300 flex flex-col"
-               style="box-shadow:0 10px 25px rgba(0,0,0,0.1),0 4px 10px rgba(0,0,0,0.04);">
+          <!-- Uses card -->
+          <div class="detail-card detail-about-card hover:scale-105">
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-indigo-500"></div>
             <div class="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-50 opacity-40"></div>
             <div class="relative z-10 flex flex-col h-full">
               <h3 class="detail-title">
                 <span class="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">🌟</span>
+                
                 Common Uses
+                
               </h3>
                <div class="flex-1 overflow-hidden">
                <ul class="detail-uses w-full relative z-10"></ul>
@@ -242,11 +284,12 @@
     </li>
   </template>
 
-  <!-- =====================================================
-       JavaScript: order matters
-       data.js must come first (everything else reads from it)
-       main.js must come last (calls functions from all others)
-       ===================================================== -->
+ <!-- =====================================================
+     APPLICATION SCRIPTS
+     Load order is important.
+     data.js first
+     main.js last
+     ===================================================== -->
   <script src="js/data.js"></script>
   <script src="js/textFit.js"></script>
   <script src="js/cards.js"></script>

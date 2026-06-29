@@ -11,7 +11,7 @@
  * @param {Object} species
  * @returns {DocumentFragment}
  */
-function createAlgaeCard(species) {
+function createSpeciesCard(species) {
   const template = document.getElementById('card-template');
   const clone = template.content.cloneNode(true);
 
@@ -22,11 +22,11 @@ function createAlgaeCard(species) {
   const border = species.borderColor || 'border-white';
 
   // Connect each card to its detail view.
-  const card = clone.querySelector('.algae-card');
+  const card = clone.querySelector('.species-card');
   card.addEventListener('click', () => showDetail(species.id));
 
   // Apply the image circle gradient and border color.
-  const icon = clone.querySelector('.card-icon');
+  const icon = clone.querySelector('.species-image');
   icon.classList.add('bg-gradient-to-br', ...gradient.split(' '), border);
 
   // Species image with emoji fallback
@@ -53,8 +53,8 @@ return clone;
 /**
  * Renders all species cards into the #homeView grid.
  */
-function renderCards() {
+function renderSpeciesCards() {
   const homeView = document.getElementById('homeView');
   homeView.innerHTML = '';
-  algaeSpecies.forEach(species => homeView.appendChild(createAlgaeCard(species)));
+  algaeSpecies.forEach(species => homeView.appendChild(createSpeciesCard(species)));
 }
