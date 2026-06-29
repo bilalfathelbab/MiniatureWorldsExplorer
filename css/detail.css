@@ -145,9 +145,9 @@
 .detail-characteristics .item-text,
 .detail-uses .item-text {
 
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 
-    line-height: 1;
+    line-height: 1.2;
   ;
 }
 
@@ -156,7 +156,7 @@
     width: 2rem;
     height: 2rem;
 
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 
     flex-shrink: 0;
 }
