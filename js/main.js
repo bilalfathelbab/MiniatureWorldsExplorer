@@ -18,9 +18,8 @@ async function initialize() {
   document.getElementById('backButton').addEventListener('click', showHome);
   startBubbles();
   initFullscreen();
-  
-//debug temporary
-  showDebugInfo();
+alert("Initialize finished");
+showDebugInfo();
 }
 
 // Wait for the DOM if needed, otherwise run immediately.
@@ -33,6 +32,8 @@ if (document.readyState === 'loading') {
 
 //debug info
 function showDebugInfo() {
+    alert("showDebugInfo() called");
+
     const box = document.createElement("div");
 
     box.style.position = "fixed";
