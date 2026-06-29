@@ -139,13 +139,13 @@
 
    .detail-characteristics li,
 .detail-uses li {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.2rem;
 }
 
 .detail-characteristics .item-text,
 .detail-uses .item-text {
 
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 
     line-height: 1.2;
   ;
@@ -156,7 +156,7 @@
     width: 2rem;
     height: 2rem;
 
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 
     flex-shrink: 0;
 }

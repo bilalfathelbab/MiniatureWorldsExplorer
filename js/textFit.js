@@ -1,4 +1,4 @@
-function fitDescription(element, minSize = 12, maxSize = 22
+function fitDescription(element, minSize = 12, maxSize = 20
 ) {
 
     let size = maxSize;
