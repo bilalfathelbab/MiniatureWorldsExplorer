@@ -136,5 +136,3 @@ The application focuses on presenting scientific information in an accessible fo
 ## License
 
 This project is intended for educational purposes.
-
-Microscope images and educational content remain the property of their respective owners where applicable.
