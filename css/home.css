@@ -146,7 +146,7 @@ cursor: pointer;
 
     text-align: center;
 
-    padding: 1rem;
+    padding: .5rem;
 }
 
 /* ============================================================
@@ -157,7 +157,7 @@ cursor: pointer;
 
     font-family: "Arial Black", Arial, sans-serif;
 
-    font-size: clamp(1.4rem, 2vw, 2.2rem);
+    font-size: clamp(1.8rem, 2.3vw, 2rem);
 
     color: #d5e042;
 
@@ -178,7 +178,7 @@ cursor: pointer;
 
     margin-top: 0.3rem;
 
-    font-size: 0.8em;
+    font-size: 0.65em;
 
     font-style: italic;
 
@@ -193,7 +193,7 @@ cursor: pointer;
 
    .species-image {
 
-    width: 80%;
+    width: 90%;
 
     aspect-ratio: 1 / 1;
 
@@ -203,7 +203,7 @@ cursor: pointer;
 
     align-items: center;
 
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.75rem;
 
     overflow: hidden;
 
