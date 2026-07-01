@@ -2,16 +2,16 @@
    Home Grid
    ============================================================ */
    .home-grid {
-
     flex: 1;
 
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 2rem;
+    padding: .5rem 2rem 2rem;
 
-    padding: 2rem;
+    row-gap: 1.5rem;
+    column-gap: 2rem;
 
     overflow: hidden;
 
