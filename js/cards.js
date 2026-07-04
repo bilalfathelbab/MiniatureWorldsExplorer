@@ -19,7 +19,6 @@ function createSpeciesCard(species) {
   
   const imageUrl = species.speciesImage || '';
   const gradient = getGradientForColor(species.color);
-  const border = species.borderColor || 'border-white';
 
   // Connect each card to its detail view.
   const card = clone.querySelector('.species-card');
@@ -27,7 +26,7 @@ function createSpeciesCard(species) {
 
   // Apply the image circle gradient and border color.
   const icon = clone.querySelector('.species-image');
-  icon.classList.add('bg-gradient-to-br', ...gradient.split(' '), border);
+  icon.classList.add('bg-gradient-to-br', ...gradient.split(' '));
 
   // Species image with emoji fallback
   const img = clone.querySelector('.card-img');
