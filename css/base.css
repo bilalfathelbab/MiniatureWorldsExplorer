@@ -33,6 +33,7 @@ body {
 button,
 .species-card {
   touch-action: auto;
+  touch-action: manipulation;
 }
 
 /* ============================================================
