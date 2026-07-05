@@ -2,13 +2,15 @@
    Home Grid
    ============================================================ */
    .home-grid {
-    flex: 1;
+    flex: 0 0 85%;
 
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    padding: .5rem 2rem 2rem;
+  
+    padding: .5rem 0 .75rem;
+
 
     row-gap: 1.5rem;
     column-gap: 2rem;
@@ -18,6 +20,128 @@
     align-items: stretch;
 }
 
+/* ============================================================
+   Home View Layout
+   ============================================================ */
+
+#homeView {
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+
+    padding: 0 3rem 0rem;
+}
+
+/* ============================================================
+   Microscope Guide Card
+   ============================================================ */
+
+ .microscope-card {
+
+  appearance: none;
+    display: flex;
+    margin-top: 0.5rem;
+
+    align-items: center;
+
+    width: 100%;
+
+    height: 4.5rem;
+min-height: unset;
+    padding: 0.5rem 1.25rem;
+
+    border-radius: .75rem;
+
+    background: rgba(255,255,255,.05);
+
+    border: 2px solid rgba(255,255,255,.25);
+
+    backdrop-filter: blur(12px);
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+}
+
+.microscope-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 0.8rem;
+    margin-top: .3rem;
+}
+
+.microscope-icon img {
+    width: 80px;
+    height: 80px;
+}
+
+
+.microscope-content {
+
+    flex: 1;
+
+    text-align: left;
+}
+
+.microscope-title {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 1.75rem;
+    margin-bottom: 0rem;
+
+    font-weight: 700;
+
+    color: #66E7D6;
+
+    margin-bottom: 0rem;
+}
+
+.microscope-subtitle {
+
+    font-size: 1.25rem;
+    line-height: .5;
+
+    color: rgba(255,255,255,.9);
+    margin-bottom: 1rem;
+}
+
+.microscope-arrow {
+
+    font-size: 3rem;
+
+    color: #66E7D6;
+
+    margin-left: 1.5rem;
+
+    transition: transform .25s ease;
+}
+
+.microscope-card:hover {
+
+    transform: translateY(-4px);
+
+    background: rgba(255,255,255,.12);
+
+    border-color: rgba(255,255,255,.45);
+
+    box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+
+.microscope-card:hover .microscope-arrow {
+
+    transform: translateX(8px);
+}
 /* ============================================================
    Home grid species Cards
    ============================================================ */
@@ -40,7 +164,7 @@
 
     border-radius: 0.75rem;
 
-padding: 1rem;
+padding: 2rem;
 
 cursor: pointer;
 }
@@ -147,6 +271,8 @@ cursor: pointer;
     text-align: center;
 
     padding: .5rem;
+
+    transform: translateY(-15px);
 }
 
 /* ============================================================
@@ -178,7 +304,7 @@ cursor: pointer;
 
     margin-top: 0.3rem;
 
-    font-size: 0.65em;
+    font-size: 0.60em;
 
     font-style: italic;
 
@@ -193,7 +319,7 @@ cursor: pointer;
 
    .species-image {
 
-    width: 90%;
+    width: 100%;
 
     aspect-ratio: 1 / 1;
 
@@ -203,7 +329,7 @@ cursor: pointer;
 
     align-items: center;
 
-    margin: 0 auto 0.75rem;
+    margin: 0 auto .75rem;
 
     overflow: hidden;
 

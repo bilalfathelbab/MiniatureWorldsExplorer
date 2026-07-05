@@ -14,9 +14,19 @@
  */
 async function initialize() {
   await loadSpeciesData();
+
   renderSpeciesCards();
-  document.getElementById('backButton').addEventListener('click', showHome);
+
+  // Microscope guide button
+  document.getElementById('microscopeCard')
+    .addEventListener('click', showMicroscopeGuide);
+
+  // Back button
+  document.getElementById('backButton')
+    .addEventListener('click', showHome);
+
   startBubbles();
+
   initFullscreen();
 }
 

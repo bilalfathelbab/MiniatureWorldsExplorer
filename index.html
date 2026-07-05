@@ -63,9 +63,37 @@
     </header>
 
    <!-- Species card grid: populated by cards.js -->
-    <main id="homeView"
-      class="home-grid"
-    </main>
+  <main id="homeView">
+
+    <div class="home-grid" id="speciesGrid">
+    </div>
+
+   <button id="microscopeCard" class="microscope-card">
+
+   <div class="microscope-icon">
+
+    <img src="images/microscope-icon.png" alt="">
+
+</div>
+
+    <div class="microscope-content">
+
+        <h2 class="microscope-title">
+            New to using a microscope?
+        </h2>
+
+        <p class="microscope-subtitle">
+            Learn how to use the microscope and get the best views!
+        </p>
+
+    </div>
+
+    <div class="microscope-arrow">
+        ›
+    </div>
+
+</button>
+</main>
 
   </div>
 
@@ -271,7 +299,33 @@
     </div>
   </template>
 
-  <!-- =====================================================
+</template>
+
+<!-- Microscope guide template -->
+<template id="microscope-template">
+
+    <div class="h-full flex flex-col">
+
+        <div class=" bg-gradient-to-br from-sky-500 via-cyan-600 to-blue-700 flex items-center justify-center">
+
+    </div>
+
+        <div class="flex-1 bg-white overflow-auto flex justify-center items-start">
+
+    <img
+        src="images/microscopeTutorial.png"
+        alt="Microscope Tutorial"
+        class="w-full h-full"
+    >
+
+</div>
+
+    </div>
+
+</template>
+
+
+ <!-- =====================================================
        LIST ITEM TEMPLATE
        Used for both characteristics and uses lists
        ===================================================== -->
@@ -297,6 +351,7 @@
   <script src="js/cards.js"></script>
   <script src="js/bubbles.js"></script>
   <script src="js/detail.js"></script>
+  <script src="js/microscope.js"></script>
   <script src="js/main.js"></script>
 
 </body>

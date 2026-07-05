@@ -53,7 +53,7 @@ return clone;
  * Renders all species cards into the #homeView grid.
  */
 function renderSpeciesCards() {
-  const homeView = document.getElementById('homeView');
+  const homeView = document.getElementById('speciesGrid');
   homeView.innerHTML = '';
   algaeSpecies.forEach(species => homeView.appendChild(createSpeciesCard(species)));
 }
