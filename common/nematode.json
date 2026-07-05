@@ -1,22 +1,22 @@
 {
-    "id": 8,
-    "name": "Nematode (Nematode sp.)",
-    "emoji": "🐛",
-    "color": "bg-yellow-600",
-    "speciesImage": "images/nematode.png",
-    "habitat": "Soil, freshwater, saltwater",
-    "size": "Microscopic to 30 feet",
-    "description": "Nematodes are invertebrates found in soil, freshwater, saltwater, and sometimes inside other animals. They range from microscopic to nearly 30 feet (9 meters) long. They are among Earth's most abundant animals and play a vital role by recycling nutrients, supporting healthy soil, plants, and fungi.",
-    "characteristics": [
-      "Most common animals on Earth",
-      "Make up 80% of all animal species",
-      "Extreme size variation",
-      "Some parasitic, others free-living"
-    ],
-    "uses": [
-      "Nutrient recycling in soil",
-      "Support plant growth",
-      "Support fungal growth",
-      "Ecosystem maintenance"
-    ]
-  }
+  "id": 8,
+  "name": "Nematode (Nematode sp.)",
+  "emoji": "🐛",
+  "color": "bg-yellow-600",
+  "speciesImage": "images/nematode.png",
+  "habitat": "Soil, freshwater, saltwater",
+  "size": "Microscopic to 30 feet",
+  "description": "Nematodes are invertebrates found in soil, freshwater, saltwater, and sometimes inside other animals. They range from microscopic to nearly 30 feet (9 meters) long. They are among Earth's most abundant animals and play a vital role by recycling nutrients, supporting healthy soil, plants, and fungi.",
+  "characteristics": [
+    "Most common animals on Earth",
+    "Make up 80% of all animal species",
+    "Extreme size variation",
+    "Some parasitic, others free-living"
+  ],
+  "uses": [
+    "Nutrient recycling in soil",
+    "Support plant growth",
+    "Support fungal growth",
+    "Ecosystem maintenance"
+  ]
+}

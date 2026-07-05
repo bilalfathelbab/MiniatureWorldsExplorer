@@ -1,22 +1,22 @@
 {
-    "id": 3,
-    "name": "Flatworms (Platyhelminthes sp.)",
-    "emoji": "🪱",
-    "color": "bg-orange-500",
-    "speciesImage": "images/flatWorm.png",
-    "habitat": "Wet soil, saltwater, freshwater",
-    "size": "Microscopic to 130 feet",
-    "description": "Flatworms live in wet soil, freshwater, saltwater, and inside other animals. They range from microscopic species to over 130 feet (40 meters) long. Many can regenerate, with each half growing into a new individual. They help decompose organic matter and recycle nutrients in their ecosystems.",
-    "characteristics": [
-      "Remarkable regenerative abilities",
-      "Can regenerate from cut pieces",
-      "Wide size range variation",
-      "Some species are parasitic"
-    ],
-    "uses": [
-      "Decompose organic matter",
-      "Recycle nutrients in environment",
-      "Scientific research subjects",
-      "Ecological balance maintenance"
-    ]
-  }
+  "id": 3,
+  "name": "Flatworms (Platyhelminthes sp.)",
+  "emoji": "🪱",
+  "color": "bg-orange-500",
+  "speciesImage": "images/flatWorm.png",
+  "habitat": "Wet soil, saltwater, freshwater",
+  "size": "Microscopic to 130 feet",
+  "description": "Flatworms live in wet soil, freshwater, saltwater, and inside other animals. They range from microscopic species to over 130 feet (40 meters) long. Many can regenerate, with each half growing into a new individual. They help decompose organic matter and recycle nutrients in their ecosystems.",
+  "characteristics": [
+    "Remarkable regenerative abilities",
+    "Can regenerate from cut pieces",
+    "Wide size range variation",
+    "Some species are parasitic"
+  ],
+  "uses": [
+    "Decompose organic matter",
+    "Recycle nutrients in environment",
+    "Scientific research subjects",
+    "Ecological balance maintenance"
+  ]
+}

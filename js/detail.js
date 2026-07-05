@@ -16,22 +16,21 @@ function showDetail(speciesId) {
 
   const imageUrl = species.speciesImage;
   const gradient = getGradientForColor(species.color);
-
   const clone = buildDetailFragment(species, imageUrl, gradient);
-
   const detailContent = document.getElementById('detailContent');
+
   detailContent.innerHTML = '';
   detailContent.appendChild(clone);
 
   const detailView = document.getElementById('detailView');
   const homeView = document.getElementById('homeView');
 
-  detailView.classList.remove('hidden');
+  startDetailBubbles();
+  restartDetailPanelAnimation(detailView);
+  detailView.classList.remove('hidden', 'detail-overlay-hidden', 'overlay-fade-out');
+  detailView.classList.add('detail-overlay-visible');
   detailView.classList.add('overlay-fade-in');
   homeView.classList.add('hidden');
-
-  stopHomeBubbles();
-  startDetailBubbles();
 }
 
 /**
@@ -49,18 +48,37 @@ function showHome() {
     detailContent.classList.replace('detail-view', 'detail-view-closing');
   }
 
-  stopDetailBubbles();
-  startBubbles();
-
   setTimeout(() => {
-    detailView.classList.add('hidden');
-    detailView.classList.remove('overlay-fade-out');
+    startBubbles();
+    hideDetailView(detailView);
     homeView.classList.remove('hidden');
 
     if (detailContent) {
       detailContent.classList.replace('detail-view-closing', 'detail-view');
     }
   }, 400);
+}
+
+function hideDetailView(detailView) {
+  detailView.classList.add('detail-overlay-hidden');
+  detailView.classList.remove('detail-overlay-visible', 'overlay-fade-in', 'overlay-fade-out');
+  detailView.classList.remove('hidden');
+
+  const styles = window.getComputedStyle(detailView);
+  const overlayIsHidden = styles.visibility === 'hidden' || Number(styles.opacity) === 0;
+
+  if (!overlayIsHidden) {
+    detailView.classList.add('hidden');
+  }
+}
+
+function restartDetailPanelAnimation(detailView) {
+  const detailPanel = detailView.querySelector('.detail-view, .detail-view-closing');
+  if (!detailPanel) return;
+
+  detailPanel.classList.remove('detail-view', 'detail-view-closing');
+  void detailPanel.offsetWidth;
+  detailPanel.classList.add('detail-view');
 }
 
 // ============================================================
@@ -78,51 +96,42 @@ function buildDetailFragment(species, imageUrl, gradient) {
   const template = document.getElementById('detail-template');
   const clone = template.content.cloneNode(true);
 
-  // Header background gradient.
   const header = clone.querySelector('.detail-header');
   header.classList.add('bg-gradient-to-br', ...gradient.split(' '));
 
-  // Species image.
   const img = clone.querySelector('.detail-img');
   img.src = imageUrl;
   img.alt = species.name;
 
-  // Fullscreen click on image wrapper.
   const imgWrapper = clone.querySelector('.detail-img-wrapper');
   imgWrapper.addEventListener('click', () => openFullscreen(imageUrl, species.name));
 
-  // Name, habitat, and size.
   const title = clone.querySelector('.detail-name');
-
-title.innerHTML = species.name.replace(
+  title.innerHTML = species.name.replace(
     /\(([^)]+)\)/,
     '<span class="detail-scientific-name">($1)</span>'
-);
+  );
+
   clone.querySelector('.detail-habitat').textContent = '📍 ' + species.habitat;
   clone.querySelector('.detail-size').textContent = '📏 ' + species.size;
 
-  // About card colors match the species gradient.
   const aboutBar = clone.querySelector('.detail-about-bar');
   const aboutIcon = clone.querySelector('.detail-about-icon');
   aboutBar.classList.add('bg-gradient-to-r', ...gradient.split(' '));
   aboutIcon.classList.add('bg-gradient-to-r', ...gradient.split(' '));
 
-  // Description text.
- const description = clone.querySelector('.detail-description');
-
-description.textContent = species.description;
-
-requestAnimationFrame(() => {
+  // Fit the variable-length description into its fixed card area.
+  const description = clone.querySelector('.detail-description');
+  description.textContent = species.description;
+  requestAnimationFrame(() => {
     fitDescription(description);
-});
+  });
 
-  // Characteristics list.
   const charList = clone.querySelector('.detail-characteristics');
   species.characteristics.forEach((text, i) => {
     charList.appendChild(buildListItem(text, i + 1, 'from-emerald-400 to-teal-500'));
   });
 
-  // Uses list.
   const usesList = clone.querySelector('.detail-uses');
   species.uses.forEach((text, i) => {
     usesList.appendChild(buildListItem(text, i + 1, 'from-blue-400 to-indigo-500'));
