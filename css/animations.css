@@ -10,6 +10,18 @@
   animation: slideOut 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
 }
 
+.detail-overlay-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.detail-overlay-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .overlay-fade-in {
   animation: overlayFadeIn 0.5s ease-out;
 }
@@ -24,57 +36,59 @@
 
 .fullscreen-fade-out {
   animation: fullscreenFadeOut 0.25s ease-in;
-}   
+}
 
 /* ============================================================
    BUBBLE KEYFRAME ANIMATIONS
    ============================================================ */
 
 @keyframes gentleFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-3px); }
+  0%,
+  100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
 }
 
 @keyframes gentleRotate {
-  0%, 100% { transform: rotate(0deg); }
-  25%       { transform: rotate(1deg); }
-  75%       { transform: rotate(-1deg); }
+  0%,
+  100% { transform: rotate(0deg); }
+  25% { transform: rotate(1deg); }
+  75% { transform: rotate(-1deg); }
 }
 
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(30px) scale(0.95); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes slideOut {
   from { opacity: 1; transform: translateY(0) scale(1); }
-  to   { opacity: 0; transform: translateY(-30px) scale(0.95); }
+  to { opacity: 0; transform: translateY(-30px) scale(0.95); }
 }
 
 @keyframes overlayFadeIn {
   from { opacity: 0; backdrop-filter: blur(0px); }
-  to   { opacity: 1; backdrop-filter: blur(8px); }
+  to { opacity: 1; backdrop-filter: blur(8px); }
 }
 
 @keyframes overlayFadeOut {
   from { opacity: 1; backdrop-filter: blur(8px); }
-  to   { opacity: 0; backdrop-filter: blur(0px); }
+  to { opacity: 0; backdrop-filter: blur(0px); }
 }
 
 @keyframes fullscreenFadeIn {
   from { opacity: 0; transform: scale(0.8); }
-  to   { opacity: 1; transform: scale(1); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes fullscreenFadeOut {
   from { opacity: 1; transform: scale(1); }
-  to   { opacity: 0; transform: scale(0.8); }
+  to { opacity: 0; transform: scale(0.8); }
 }
 
 @keyframes bubbleFloat {
-  0%   { transform: translateY(100vh) translateX(0px) scale(0);  opacity: 0; }
-  10%  { opacity: 0.8; }
-  50%  { transform: translateY(40vh)  translateX(15px) scale(0.7); opacity: 0.8; }
-  90%  { opacity: 0.6; }
+  0% { transform: translateY(100vh) translateX(0px) scale(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  50% { transform: translateY(40vh) translateX(15px) scale(0.7); opacity: 0.8; }
+  90% { opacity: 0.6; }
   100% { transform: translateY(-10vh) translateX(-10px) scale(1); opacity: 0; }
 }

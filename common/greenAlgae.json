@@ -1,22 +1,22 @@
 {
-    "id": 2,
-    "name": "Green Algae (Ulvophyceae)",
-    "emoji": "🟢",
-    "color": "bg-green-500",
-    "speciesImage": "images/greenAlgae.png",
-    "habitat": "Freshwater, saltwater, land",
-    "size": "Unicellular to multicellular",
-    "description": "Green algae are photosynthetic organisms found in freshwater, saltwater, and on land. They can be unicellular or multicellular. As primary producers, they form the base of many food webs. They are also used in fertilizer production, wastewater treatment, and sustainable building materials.",
-    "characteristics": [
-      "Diverse photosynthetic organisms",
-      "Can be unicellular or multicellular",
-      "Primary producers in ecosystems",
-      "Form base of many food webs"
-    ],
-    "uses": [
-      "Fertilizer production",
-      "Wastewater treatment",
-      "Biofuel development",
-      "Construction materials"
-    ]
-  }
+  "id": 2,
+  "name": "Green Algae (Ulvophyceae)",
+  "emoji": "🟢",
+  "color": "bg-green-500",
+  "speciesImage": "images/greenAlgae.png",
+  "habitat": "Freshwater, saltwater, land",
+  "size": "Unicellular to multicellular",
+  "description": "Green algae are photosynthetic organisms found in freshwater, saltwater, and on land. They can be unicellular or multicellular. As primary producers, they form the base of many food webs. They are also used in fertilizer production, wastewater treatment, and sustainable building materials.",
+  "characteristics": [
+    "Diverse photosynthetic organisms",
+    "Can be unicellular or multicellular",
+    "Primary producers in ecosystems",
+    "Form base of many food webs"
+  ],
+  "uses": [
+    "Fertilizer production",
+    "Wastewater treatment",
+    "Biofuel development",
+    "Construction materials"
+  ]
+}

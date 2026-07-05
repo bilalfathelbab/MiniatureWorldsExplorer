@@ -12,14 +12,20 @@
   backface-visibility: hidden;
   transform: translateZ(0);
 }
-#bubbleContainer, #detailBubbleContainer {
+#bubbleContainer,
+#detailBubbleContainer {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  /* no overflow: hidden — fixed children aren't clipped by it anyway */
+  /* Fixed children are not clipped by overflow, so visibility controls the layer. */
 }
-.bubble-removing {
+
+.bubble-layer-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bubble-layer-hidden {
   opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  visibility: hidden;
 }

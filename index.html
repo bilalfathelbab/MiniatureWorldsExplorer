@@ -11,30 +11,30 @@
   <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
-<!-- =====================================================
-     PROJECT STYLES
-     ===================================================== -->
+  <!-- =====================================================
+       PROJECT STYLES
+       ===================================================== -->
 
-<!-- Theme -->
-<link rel="stylesheet" href="css/variables.css">
+  <!-- Theme -->
+  <link rel="stylesheet" href="css/variables.css">
 
-<!-- Global styles -->
-<link rel="stylesheet" href="css/base.css">
+  <!-- Global styles -->
+  <link rel="stylesheet" href="css/base.css">
 
-<!-- Home screen -->
-<link rel="stylesheet" href="css/home.css">
+  <!-- Home screen -->
+  <link rel="stylesheet" href="css/home.css">
 
-<!-- Detail screen -->
-<link rel="stylesheet" href="css/detail.css">
+  <!-- Detail screen -->
+  <link rel="stylesheet" href="css/detail.css">
 
-<!-- Bubble effects -->
-<link rel="stylesheet" href="css/bubbles.css">
+  <!-- Bubble effects -->
+  <link rel="stylesheet" href="css/bubbles.css">
 
-<!-- Animations -->
-<link rel="stylesheet" href="css/animations.css">
+  <!-- Animations -->
+  <link rel="stylesheet" href="css/animations.css">
 
-<!-- Responsive overrides -->
-<link rel="stylesheet" href="css/responsive.css">
+  <!-- Responsive overrides -->
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body class="app-background h-full overflow-hidden">
@@ -62,54 +62,42 @@
       </p>
     </header>
 
-   <!-- Species card grid: populated by cards.js -->
-  <main id="homeView">
+    <!-- Species card grid: populated by cards.js -->
+    <main id="homeView">
+      <div class="home-grid" id="speciesGrid"></div>
 
-    <div class="home-grid" id="speciesGrid">
-    </div>
+      <button id="microscopeCard" class="microscope-card">
+        <div class="microscope-icon">
+          <img src="images/microscope-icon.png" alt="">
+        </div>
 
-   <button id="microscopeCard" class="microscope-card">
-
-   <div class="microscope-icon">
-
-    <img src="images/microscope-icon.png" alt="">
-
-</div>
-
-    <div class="microscope-content">
-
-        <h2 class="microscope-title">
+        <div class="microscope-content">
+          <h2 class="microscope-title">
             New to using a microscope?
-        </h2>
+          </h2>
 
-        <p class="microscope-subtitle">
+          <p class="microscope-subtitle">
             Learn how to use the microscope and get the best views!
-        </p>
+          </p>
+        </div>
 
-    </div>
-
-    <div class="microscope-arrow">
-        ›
-    </div>
-
-</button>
-</main>
-
+        <div class="microscope-arrow">
+          ›
+        </div>
+      </button>
+    </main>
   </div>
 
   <!-- =====================================================
-     HOME SPECIES CARD TEMPLATE
-     Cloned once per species by cards.js
-     ===================================================== -->
+       HOME SPECIES CARD TEMPLATE
+       Cloned once per species by cards.js
+       ===================================================== -->
   <template id="card-template">
-
-
-      <div class="species-card">
-
-         <div class="card-content">
+    <div class="species-card">
+      <div class="card-content">
 
         <!-- Home species image -->
-      <div class="species-image">
+        <div class="species-image">
           <img class="card-img w-full h-full object-cover rounded-full scale-125" loading="lazy" src="" alt="">
           <!-- Emoji fallback shown if image fails to load -->
           <span class="card-emoji" style="display:none;"></span>
@@ -118,53 +106,54 @@
         <!-- Home species title -->
         <h3 class="card-name card-title"></h3>
       </div>
-
     </div>
-
-
   </template>
 
   <!-- =====================================================
-     DETAIL SCREEN
-     Hidden until a species card is selected.
-     ===================================================== -->
-  <div id="detailView" class="hidden fixed inset-0 z-50" style="background-color: #00577c;">
+       DETAIL SCREEN
+       Hidden until a species card is selected.
+       ===================================================== -->
+  <div id="detailView" class="hidden detail-overlay-hidden fixed inset-0 z-50" style="background-color: #00577c;">
 
     <!-- Bubbles for the detail view -->
     <div id="detailBubbleContainer" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
 
     <!-- Fullscreen image modal -->
-    <div id="fullscreenModal"
-         class="hidden fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center backdrop-blur-sm">
+    <div
+      id="fullscreenModal"
+      class="hidden fixed inset-0 z-[100] bg-black bg-opacity-90 flex items-center justify-center backdrop-blur-sm">
       <div class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center">
-        <img id="fullscreenImage" src="" alt=""
-             class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
-        <button id="closeFullscreen"
-                class="absolute top-4 right-4 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-2xl font-bold transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white border-opacity-30">
+        <img
+          id="fullscreenImage"
+          src=""
+          alt=""
+          class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+        <button
+          id="closeFullscreen"
+          class="absolute top-4 right-4 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-2xl font-bold transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-white border-opacity-30">
           &times;
         </button>
-        <div id="fullscreenCaption"
-             class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-full backdrop-blur-sm border border-white border-opacity-20 text-center max-w-md">
+        <div
+          id="fullscreenCaption"
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-full backdrop-blur-sm border border-white border-opacity-20 text-center max-w-md">
         </div>
       </div>
     </div>
 
-<!-- =====================================================
-     HOME SCREEN
-     ===================================================== -->
+    <!-- Detail screen wrapper -->
     <div class="h-full flex flex-col relative z-10">
 
       <!-- Back button -->
       <div class="flex-shrink-0 p-3 sm:p-4 md:p-6">
-        <button id="backButton"
-                class="flex items-center px-5 md:px-6 lg:px-8 py-3 md:py-4 rounded-lg shadow-lg cursor-pointer border border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl text-white font-medium text-base md:text-lg lg:text-xl"
-                style="background: linear-gradient(135deg, rgba(20,184,166,0.2) 0%, rgba(13,148,136,0.3) 100%);">
+        <button
+          id="backButton"
+          class="flex items-center px-5 md:px-6 lg:px-8 py-3 md:py-4 rounded-lg shadow-lg cursor-pointer border border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-xl text-white font-medium text-base md:text-lg lg:text-xl"
+          style="background: linear-gradient(135deg, rgba(20,184,166,0.2) 0%, rgba(13,148,136,0.3) 100%);">
           <svg class="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 mr-2 md:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
 
           <span>Back to Species Grid</span>
-          
         </button>
       </div>
 
@@ -174,7 +163,6 @@
           <div id="detailContent" class="h-full"></div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -196,13 +184,19 @@
             <!-- Detail species image -->
             <div class="flex flex-col items-center">
               <div class="detail-img-wrapper w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full border-4 border-white/50 shadow-2xl overflow-hidden bg-white/15 backdrop-blur-sm hover:scale-110 transition-transform duration-300 ring-4 ring-white/20 cursor-pointer group">
-                <img class="detail-img w-full h-full object-cover scale-125 group-hover:brightness-110 transition-all duration-300"
-                     src="" alt="" loading="lazy">
+                <img
+                  class="detail-img w-full h-full object-cover scale-125 group-hover:brightness-110 transition-all duration-300"
+                  src=""
+                  alt=""
+                  loading="lazy">
                 <!-- Zoom icon overlay -->
                 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-30 rounded-full">
                   <svg class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
                   </svg>
                 </div>
               </div>
@@ -219,16 +213,12 @@
           </div>
         </div>
 
-     <!-- Tap image label -->
-
-   <div class="tap-image-container">
-
-    <div class="tap-image-label">
-
-        Tap the image to view up close
-
-    </div>
-</div>
+        <!-- Tap image label -->
+        <div class="tap-image-container">
+          <div class="tap-image-label">
+            Tap the image to view up close
+          </div>
+        </div>
 
         <!-- Header decorations -->
         <div class="absolute top-6 left-6 w-3 h-3 bg-white/40 rounded-full animate-ping"></div>
@@ -248,15 +238,12 @@
             <div class="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-50"></div>
             <div class="relative z-10 flex flex-col h-full">
               <h3 class="detail-title">
-
                 <span class="detail-about-icon w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">ℹ️</span>
-                
                 About This Species
-
               </h3>
-           <div class="flex-1 overflow-hidden">
-          <p class="detail-description text-gray-800 font-medium leading-relaxed"></p>
-            </div>
+              <div class="flex-1 overflow-hidden">
+                <p class="detail-description text-gray-800 font-medium leading-relaxed"></p>
+              </div>
             </div>
           </div>
 
@@ -267,13 +254,11 @@
             <div class="relative z-10 flex flex-col h-full">
               <h3 class="detail-title">
                 <span class="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">🔬</span>
-                
                 Key Characteristics
-
               </h3>
               <div class="flex-1 overflow-hidden">
-              <ul class="detail-characteristics w-full relative z-10"></ul>
-             </div>           
+                <ul class="detail-characteristics w-full relative z-10"></ul>
+              </div>
             </div>
           </div>
 
@@ -284,12 +269,10 @@
             <div class="relative z-10 flex flex-col h-full">
               <h3 class="detail-title">
                 <span class="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full mr-2 md:mr-3 flex items-center justify-center text-white text-xs md:text-base shadow-lg">🌟</span>
-                
                 Common Uses
-                
               </h3>
-               <div class="flex-1 overflow-hidden">
-               <ul class="detail-uses w-full relative z-10"></ul>
+              <div class="flex-1 overflow-hidden">
+                <ul class="detail-uses w-full relative z-10"></ul>
               </div>
             </div>
           </div>
@@ -299,33 +282,21 @@
     </div>
   </template>
 
-</template>
-
-<!-- Microscope guide template -->
-<template id="microscope-template">
-
+  <!-- Microscope guide template -->
+  <template id="microscope-template">
     <div class="h-full flex flex-col">
+      <div class="bg-gradient-to-br from-sky-500 via-cyan-600 to-blue-700 flex items-center justify-center"></div>
 
-        <div class=" bg-gradient-to-br from-sky-500 via-cyan-600 to-blue-700 flex items-center justify-center">
-
+      <div class="flex-1 bg-white overflow-auto flex justify-center items-start">
+        <img
+          src="images/microscopeTutorial.png"
+          alt="Microscope Tutorial"
+          class="w-full h-full">
+      </div>
     </div>
+  </template>
 
-        <div class="flex-1 bg-white overflow-auto flex justify-center items-start">
-
-    <img
-        src="images/microscopeTutorial.png"
-        alt="Microscope Tutorial"
-        class="w-full h-full"
-    >
-
-</div>
-
-    </div>
-
-</template>
-
-
- <!-- =====================================================
+  <!-- =====================================================
        LIST ITEM TEMPLATE
        Used for both characteristics and uses lists
        ===================================================== -->
@@ -340,12 +311,12 @@
     </li>
   </template>
 
- <!-- =====================================================
-     APPLICATION SCRIPTS
-     Load order is important.
-     data.js first
-     main.js last
-     ===================================================== -->
+  <!-- =====================================================
+       APPLICATION SCRIPTS
+       Load order is important.
+       data.js first
+       main.js last
+       ===================================================== -->
   <script src="js/data.js"></script>
   <script src="js/textFit.js"></script>
   <script src="js/cards.js"></script>
@@ -353,6 +324,5 @@
   <script src="js/detail.js"></script>
   <script src="js/microscope.js"></script>
   <script src="js/main.js"></script>
-
 </body>
 </html>
