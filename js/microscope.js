@@ -10,6 +10,9 @@ function showMicroscopeGuide() {
 
   detailContent.innerHTML = '';
   detailContent.appendChild(clone);
+  document
+  .getElementById('detailWrapper')
+  .classList.add('microscope-mode');
 
   document.getElementById('homeView').classList.add('hidden');
 

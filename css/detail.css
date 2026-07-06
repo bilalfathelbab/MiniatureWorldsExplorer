@@ -114,4 +114,12 @@
   font-size: 1.4rem;
 }
 
+/* ============================================================
+   Microscope Guide Mode
+   ============================================================ */
 
+#detailWrapper.microscope-mode {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
