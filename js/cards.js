@@ -14,21 +14,15 @@
 function createSpeciesCard(species) {
   const template = document.getElementById('card-template');
   const clone = template.content.cloneNode(true);
-
-
-  
   const imageUrl = species.speciesImage || '';
   const gradient = getGradientForColor(species.color);
 
-  // Connect each card to its detail view.
   const card = clone.querySelector('.species-card');
   card.addEventListener('click', () => showDetail(species.id));
 
-  // Apply the image circle gradient and border color.
   const icon = clone.querySelector('.species-image');
   icon.classList.add('bg-gradient-to-br', ...gradient.split(' '));
 
-  // Species image with emoji fallback
   const img = clone.querySelector('.card-img');
   const emoji = clone.querySelector('.card-emoji');
   img.src = imageUrl;
@@ -39,21 +33,21 @@ function createSpeciesCard(species) {
   });
   emoji.textContent = species.emoji;
 
-// Put the scientific name on a new line and style it separately.
-const nameEl = clone.querySelector('.card-name');
-nameEl.innerHTML = species.name.replace(
+  // Put the scientific name on a new line and style it separately.
+  const nameEl = clone.querySelector('.card-name');
+  nameEl.innerHTML = species.name.replace(
     /\(([^)]+)\)/,
     '<br><span class="scientific-name">($1)</span>'
-);
+  );
 
-return clone;
+  return clone;
 }
 
 /**
  * Renders all species cards into the #homeView grid.
  */
 function renderSpeciesCards() {
-  const homeView = document.getElementById('homeView');
+  const homeView = document.getElementById('speciesGrid');
   homeView.innerHTML = '';
   algaeSpecies.forEach(species => homeView.appendChild(createSpeciesCard(species)));
 }

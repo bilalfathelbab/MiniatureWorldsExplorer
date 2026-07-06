@@ -1,16 +1,10 @@
-function fitDescription(element, minSize = 12, maxSize = 21
-) {
+function fitDescription(element, minSize = 12, maxSize = 21) {
+  let size = maxSize;
 
-    let size = maxSize;
+  element.style.fontSize = size + 'px';
 
-    element.style.fontSize = size + "px";
-    
-     while (
-        element.scrollHeight > element.clientHeight &&
-        size > minSize
-    ) {
-        size -= 0.25;
-        element.style.fontSize = size + "px";
-    }
-
+  while (element.scrollHeight > element.clientHeight && size > minSize) {
+    size -= 0.25;
+    element.style.fontSize = size + 'px';
+  }
 }
