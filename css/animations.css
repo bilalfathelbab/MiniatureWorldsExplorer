@@ -92,3 +92,18 @@
   90% { opacity: 0.6; }
   100% { transform: translateY(-10vh) translateX(-10px) scale(1); opacity: 0; }
 }
+
+/* ============================================================
+   MICROSCOPE BUTTON ANIMATION
+   ============================================================ */
+
+@keyframes microscopeBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}

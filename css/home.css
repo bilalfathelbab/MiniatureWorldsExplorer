@@ -37,9 +37,9 @@
   min-height: unset;
   margin-top: 0.5rem;
   padding: 0.5rem 1.25rem;
-  border: 2px solid rgba(255, 255, 255, .25);
+  border: 4px solid rgba(41, 40, 40, 0.25);
   border-radius: .75rem;
-  background: rgba(255, 255, 255, .05);
+  background: rgba(12, 155, 211, 0.626);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
   cursor: pointer;
@@ -67,7 +67,7 @@
 
 .microscope-title {
   margin-bottom: 0rem;
-  color: #66E7D6;
+  color: #d5e042;
   font-family: Arial, sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
@@ -96,6 +96,10 @@
 
 .microscope-card:hover .microscope-arrow {
   transform: translateX(8px);
+}
+
+.microscope-card {
+  animation: microscopeBob 3.5s ease-in-out infinite;
 }
 
 /* ============================================================
